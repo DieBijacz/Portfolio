@@ -36,6 +36,22 @@ section:nth-child(2n) {
   transition: 300ms;
 }
 
+input {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+  border-radius: 100vw;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.rect {
+  background-color: yellow;
+  border-radius: 20%;
+  border: solid 1px #0D1117;
+}
+
 .btn-accent {
   background-color: #0D1117;
   color: #FF4C29;
@@ -149,38 +165,61 @@ section:nth-child(2n) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
 }
 
-.snake #game-board {
-  width: 742px;
-  height: 100px;
+.snake .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.snake #contribution-wrapper {
   background-color: #0D1117;
+  width: 100%;
+  padding: 1rem;
+}
+
+.snake #contribution-wrapper #game-board {
+  width: 100%;
+  border: 1px solid #D2D2D2;
+  border-radius: 5px;
+  padding: .2vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[7];
       grid-template-rows: repeat(7, 1fr);
-  -ms-grid-columns: (1fr)[52];
-      grid-template-columns: repeat(52, 1fr);
+  -ms-grid-columns: (1fr)[53];
+      grid-template-columns: repeat(53, 1fr);
 }
 
-.snake #game-board .snake {
+.snake #contribution-wrapper #game-board div {
+  width: 100%;
+  height: 20px;
+}
+
+.snake #contribution-wrapper #game-board .snake {
   background-color: #FF4C29;
   border-radius: 20%;
   border: solid 1px #0D1117;
 }
 
-.snake #game-board .food {
+.snake #contribution-wrapper #game-board .food {
   border: solid 1px #0D1117;
   border-radius: 20%;
   background-color: #26A641;

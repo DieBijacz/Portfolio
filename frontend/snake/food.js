@@ -4,7 +4,6 @@ import { onSnake, growSnake } from './snake.js'
 let food = { ...getRandomFoodPosition(), value: 2 }
 
 export function update() {
-  console.log('das')
   if (onSnake(food)) {
     growSnake(food.value)
     food = getRandomFoodPosition()

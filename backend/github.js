@@ -13,7 +13,6 @@ app.use(cors({
 app.get('/:user', (req, res, next) => {
   const { user } = req.params
 
-  console.log(user)
   const values = []
 
   request.get(`https://github.com/${user}`, (error, response, body) => {
