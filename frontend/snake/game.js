@@ -20,8 +20,6 @@ document.querySelector('#start-snake').addEventListener('click', () => {
   );
 })
 
-
-
 function main(currentTime) {
   if (gameOver) {
     alert('game over')
@@ -38,15 +36,15 @@ function main(currentTime) {
 }
 
 function update() {
-  updateSnake()
   checkLose()
   updateFood()
+  updateSnake()
 }
 
 function draw() {
   gameBoard.innerHTML = '' //clear between draws
   drawSnake(gameBoard)
-  drawFood(gameBoard)
+  drawFood()
 }
 
 function checkLose() {

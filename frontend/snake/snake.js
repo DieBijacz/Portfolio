@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js"
 
-export const SNAKE_SPEED = 5
+export const SNAKE_SPEED = 2
 const snakeBody = [{ x: 5, y: 2 }, { x: 4, y: 2 }, { x: 3, y: 2 }, { x: 2, y: 2 }]
 let newSegments = 0
 
@@ -24,8 +24,8 @@ export function draw(gameBoard) {
   })
 }
 
-export function growSnake(value) {
-  newSegments += value
+export function growSnake() {
+  newSegments
 }
 
 export function onSnake(coords, { ignoreHead = false } = {}) {
@@ -50,6 +50,6 @@ export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true })
 }
 
-function onSameCoords(p1, p2) {
+export function onSameCoords(p1, p2) {
   return p1.x === p2.x && p1.y === p2.y
 }

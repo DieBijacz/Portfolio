@@ -1,4 +1,4 @@
-export const GRID_WIDTH = 52
+export const GRID_WIDTH = 53
 export const GRID_HEIGHT = 7
 export function randomGridPosition() {
   return {
