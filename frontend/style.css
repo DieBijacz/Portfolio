@@ -51,18 +51,6 @@ input {
           animation: shake 0.5s;
 }
 
-.loader {
-  border: 16px solid #f3f3f3;
-  /* Light grey */
-  border-top: 16px solid #3498db;
-  /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
-}
-
 .rect {
   background-color: #39D353;
   border-radius: 20%;
@@ -224,11 +212,27 @@ input {
   background-color: #0D1117;
   width: 100%;
   padding: 1rem;
+  border-radius: 1vw;
+}
+
+.snake #contribution-wrapper .loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #FF4C29;
+  border-radius: 50%;
+  width: 5vw;
+  height: 5vw;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+  margin: 1rem auto;
+  display: none;
+}
+
+.snake #contribution-wrapper .loader.show {
+  display: block;
 }
 
 .snake #contribution-wrapper #game-board {
-  border: 1px solid #D2D2D2;
-  border-radius: 5px;
+  border-radius: .5vw;
   padding: .2vw;
   display: -ms-grid;
   display: grid;

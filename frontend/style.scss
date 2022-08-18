@@ -60,17 +60,6 @@ input {
   animation: shake 0.5s;
 }
 
-.loader {
-  border: 16px solid #f3f3f3;
-  /* Light grey */
-  border-top: 16px solid #3498db;
-  /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
 .rect {
   background-color: $green-4;
   border-radius: 20%;
@@ -195,10 +184,27 @@ input {
     background-color: $dark-color;
     width: 100%;
     padding: 1rem;
+    border-radius: 1vw;
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid $accent-color;
+      border-radius: 50%;
+      width: 5vw;
+      height: 5vw;
+      animation: spin 1s linear infinite;
+      margin: 1rem auto;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+
+    }
+
 
     #game-board {
-      border: 1px solid $grey-color;
-      border-radius: 5px;
+      border-radius: .5vw;
       padding: .2vw;
       display: grid;
       grid-template-rows: repeat(7, 1fr);
