@@ -1,5 +1,5 @@
 import { addRectOnGrid } from '../data.js'
-import { snakeHead, onSameCoords } from './snake.js'
+import { snakeHead, onSameCoords, growSnake } from './snake.js'
 
 let foodLeft = []
 
@@ -20,6 +20,7 @@ function checkEatFood() {
     if (food.value > 0) {
       if (onSameCoords(food, snakeHead())) {
         removeFood(food)
+        growSnake()
       }
     }
   })

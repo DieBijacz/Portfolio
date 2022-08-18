@@ -10,20 +10,19 @@ app.use(cors({
 }))
 
 
-app.get('/:user', (req, res) => {
+app.get('/:user', (req, res, next) => {
   const { user } = req.params
 
   const values = []
 
   request.get(`https://github.com/${user}`, (error, response, body) => {
-    console.error('error:', error)
-    console.log('statusCode:', response && response.statusCode);
 
-    if (response.statusCode === 404) {
-      console.log('response send')
-      res.json('not found')
-      return
-    }
+    if (error) return next(error)
+
+    if (response.statusCode === 404) return next({
+      status: 404,
+      message: `User '${user}' not found`
+    });
 
     if (body) {
       const $ = cheerio.load(body);
@@ -39,4 +38,16 @@ app.get('/:user', (req, res) => {
       res.json(values)
     }
   })
+
+  app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
+
+  // error handler
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({ message: err.message });
+  });
 })

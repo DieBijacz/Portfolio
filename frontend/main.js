@@ -3,9 +3,9 @@ const grid = document.querySelector('#game-board')
 const userInput = document.querySelector('#find-user')
 const form = document.querySelector('#form')
 
-
 const DEFAULT_USER = 'dieBijacz'
 
+// input user
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
   if (userInput.value === '') {
@@ -17,6 +17,7 @@ form.addEventListener('submit', async (e) => {
   }
 })
 
+// Default user
 async function setupDefaultUser() {
   grid.innerHTML = ''
   const data = await getData(DEFAULT_USER)

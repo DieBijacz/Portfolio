@@ -1,5 +1,6 @@
 import { getFood } from "./snake/food.js"
 const grid = document.querySelector('#game-board')
+const userInput = document.querySelector('#find-user')
 
 export async function getData(USER) {
   let arr = []
@@ -7,6 +8,10 @@ export async function getData(USER) {
   await fetch(`http://127.0.0.1:5000/${USER}`)
     .then(response => response.json())
     .then(data => arr = [...data])
+    .catch(error => {
+      console.log(error, data)
+      userInput.classList.add('wrong')
+    })
   arr.map((value, index) => {
     if (value !== null) {
       const posx = Math.ceil((index + 1) / 7)
