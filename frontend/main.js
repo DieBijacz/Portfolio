@@ -1,6 +1,7 @@
 import { addRectOnGrid, getData } from "./data.js"
 const grid = document.querySelector('#game-board')
 const userInput = document.querySelector('#find-user')
+const findUserBtn = document.querySelector('#find-user-btn')
 const form = document.querySelector('#form')
 const loader = document.querySelector('.loader')
 
@@ -15,6 +16,10 @@ async function fetchHandler(user = 'dieBijacz') {
     grid.style.border = '1px solid #D2D2D2'
   }
 }
+
+userInput.addEventListener('keydown', () => {
+  findUserBtn.classList.remove('hide')
+})
 
 // user input
 form.addEventListener('submit', async (e) => {

@@ -1,11 +1,5 @@
 export const GRID_WIDTH = 53
 export const GRID_HEIGHT = 7
-export function randomGridPosition() {
-  return {
-    x: Math.floor(Math.random() * GRID_WIDTH) + 1,
-    y: Math.floor(Math.random() * GRID_HEIGHT) + 1
-  }
-}
 
 export function outSideGrid(coords) {
   return (

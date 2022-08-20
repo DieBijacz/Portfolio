@@ -2,9 +2,15 @@ import { addRectOnGrid } from '../data.js'
 import { snakeHead, onSameCoords, growSnake } from './snake.js'
 
 let foodLeft = []
+let fooTotal = []
 
 export function getFood(food) {
   foodLeft = [...food]
+  fooTotal = [...food]
+}
+
+export function resetFood() {
+  foodLeft = [...fooTotal]
 }
 
 export async function draw() {
