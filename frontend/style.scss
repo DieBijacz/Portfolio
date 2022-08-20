@@ -18,13 +18,21 @@ $green-2: #006D32;
 $green-1: #0E4429;
 $green-00: #161B22;
 
-section {
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
   height: 100vh;
-  background-color: $grey-color;
 
-  &:nth-child(2n) {
-    background-color: $dark-color;
-    color: #D2D2D2;
+  section {
+    scroll-snap-align: start;
+    // scroll-snap-stop: always;
+    height: 100vh;
+    background-color: $grey-color;
+
+    &:nth-child(2n) {
+      background-color: $dark-color;
+      color: #D2D2D2;
+    }
   }
 }
 

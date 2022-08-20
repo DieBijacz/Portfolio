@@ -7,12 +7,20 @@
   font-family: 'Heebo', sans-serif;
 }
 
-section {
+.scroll-container {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.scroll-container section {
+  scroll-snap-align: start;
   height: 100vh;
   background-color: #D2D2D2;
 }
 
-section:nth-child(2n) {
+.scroll-container section:nth-child(2n) {
   background-color: #0D1117;
   color: #D2D2D2;
 }
