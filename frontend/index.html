@@ -9,6 +9,8 @@
   <title>Mateusz Stanilewicz</title>
   <script src="snake/game.js" defer type="module"></script>
   <script src="main.js" defer type="module"></script>
+  <script src="https://kit.fontawesome.com/67ecc2e8d4.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="icon" href="masta.png" type="image/x-icon">
 
 </head>
@@ -17,10 +19,12 @@
   <div class="scroll-container">
     <section>
       <div class="container hero">
-        <div class="logo"><span>MA</span><span>STA</span></div>
+        <img src="masta.png" alt="Masta">
         <div class="name">
-          <div><span>MA</span>TEUSZ</div>
-          <div><span>STA</span>NILEWICZ</div>
+          <div class="name-big">
+            <div><span>MA</span>TEUSZ</div>
+            <div><span>STA</span>NILEWICZ</div>
+          </div>
           <p>FRONT-END DEVELOPER</p>
           <div class="menu">
             <a href="">ABOUT</a>
@@ -35,71 +39,124 @@
         </div>
       </div>
     </section>
-    <section class="about">
-      <div class="container">
-        <h1>ABOUT</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repellendus, assumenda pariatur laboriosam dolore
-        maiores vitae libero voluptate consequatur veritatis? Esse, explicabo necessitatibus cum nostrum omnis adipisci,
-        quaerat libero fugiat dicta ullam, in voluptate ducimus. Expedita maiores dolorum rem accusamus eveniet
-        distinctio
-        laudantium autem aliquid totam quia suscipit iusto, nobis reprehenderit aperiam impedit nisi modi tempore? Dolor
-        repellendus quas aliquam explicabo tenetur sit mollitia nesciunt rem saepe harum doloribus quidem hic tempora,
-        corrupti incidunt. Libero modi qui doloremque voluptates aliquam officia adipisci corporis quis architecto
-        veniam
-        laudantium nihil nobis fugit numquam dicta, veritatis facilis quos animi iusto, est officiis sint praesentium
-        fuga
-        doloribus! Ipsam aut eaque voluptas ipsum accusantium quaerat eos neque est, ab asperiores similique voluptatum
-        blanditiis sed natus aspernatur dicta fugit non! Quidem sunt voluptates, deleniti repellat rem ullam? Minima
-        earum
-        sit, qui ut omnis labore itaque voluptas laudantium officia perspiciatis distinctio nisi exercitationem
-        architecto
-        dignissimos voluptates hic repellendus quibusdam! Possimus consequuntur corrupti ex dicta fugiat sint provident
-        vel
-        officiis deserunt magni dolore non, necessitatibus in. Magnam, iusto! Alias, quidem. Architecto odio voluptate
-        deleniti distinctio error ducimus corporis ad aspernatur, sequi similique, nemo quod ab maiores eligendi amet,
-        eaque
-        molestiae cupiditate iure praesentium omnis ratione tempora qui? Fugiat.
-      </div>
-    </section>
     <section>
       <div class="container">
-        <div>
-          <p>This is my git-hub</p>
-          <p>I've worked hard </p>
-        </div>
-        <div class="snake">
-          <h1>Git-Snake</h1>
-          <div class="settings">
-            <form id="form">
-              <input id="find-user" type="text" placeholder="Github user name">
-              <button type="submit" id="find-user-btn" class="btn btn-accent hide">Find</button>
-            </form>
-            <button id="start-snake" class="btn btn-accent">Start</button>
-          </div>
-          <div id="contribution-wrapper">
-            <div id="game-over">
-              <p>Game Over</p>
+        <div class="about">
+          <div id="read-more-modal">
+            <div id="about-top">
+              <h1>About</h1>
+              <button id="close-modal-btn" class="btn btn-accent">Close</button>
             </div>
-            <div class="loader show"></div>
-            <div id="game-board">
+            <hr>
+            <div id="about-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae mollitia necessitatibus nobis. Iure alias,
+              sunt a commodi aut placeat, dolores ea maiores natus quos quod ullam aperiam excepturi enim porro
+              inventore similique odit molestiae recusandae sapiente. Animi quasi explicabo delectus, tenetur enim
+              assumenda cum ullam molestias omnis quam. Reprehenderit, ratione.
+            </div>
+          </div>
+          <div class="box">
+            <div>
+              <h1>About me</h1>
+              <p>I am person who just love to learn someting. If its new program, technology. I consider myself as very
+                creative person with logical mindset. As kid I was into art.
+              </p>
+              <a href="https://diebijacz.github.io/Resume---website/" target="_blank">
+                <button id="resume" class="btn btn-accent">Resume</button>
+              </a>
+              <button id="read-more-btn" class="btn btn-white">Read More</button>
+            </div>
+            <div>
+              <h1>Skills and technologies:</h1>
+              <div class="icons">
+                <p>React</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JS</p>
+                <p>Redux</p>
+                <p>Tailwind</p>
+                <p>Bootstrap</p>
+                <p>Git</p>
+                <p>Animations</p>
+                <p>Firebase</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="projects container">
-        <h1>Masta e-commerce platform</h1>
+      <div class="container">
+        <div class="snake-container">
+          <div>
+            <h1>Eat my Git-hub</h1>
+            <p>I've worked hard for last month so </p>
+          </div>
+          <div class="snake">
+            <h1>Git-Snake</h1>
+            <div class="settings">
+              <form id="form">
+                <input id="find-user" type="text" placeholder="Github user name">
+                <button type="submit" id="find-user-btn" class="btn btn-accent hide">Find</button>
+              </form>
+              <button id="start-snake" class="btn btn-accent">Start</button>
+            </div>
+            <div id="contribution-wrapper">
+              <div id="game-over">
+                <p>Game Over</p>
+              </div>
+              <div class="loader show"></div>
+              <div id="game-board">
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="top5">
+              <h1>TOP 5</h1>
+              <ul>
+                <li>#1 Diebijacz</li>
+                <li>#2 Shiftman</li>
+                <li>#3 Eminem</li>
+                <li>#4 asf</li>
+                <li>#5 Avi</li>
+              </ul>
+            </div>
+            <div class="description">
+              <ul>
+                <li>Enter Github user name like: 'shiffman'</li>
+                <li>Press Enter or click Find</li>
+                <li>Press Start</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="project container">
         <img src="images/masta/e-commerce-hero.png" alt="hero">
         <div class="buttons">
           <div>
-            <button class="btn">
+            <button class="btn btn-white">
               <- Prev</button>
-                <button class="btn">Next -></button>
+                <button class="btn btn-white">Next -></button>
           </div>
         </div>
       </div>
     </section>
+    <section>
+      <div class="project container">
+        <img src="images/swift/hero2.png" alt="hero">
+        <div class="buttons">
+          <div>
+            <button class="btn btn-accent">
+              <- Prev</button>
+                <button class="btn btn-accent">Next -></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </body>
 

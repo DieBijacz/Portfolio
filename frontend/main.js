@@ -4,7 +4,31 @@ const userInput = document.querySelector('#find-user')
 const findUserBtn = document.querySelector('#find-user-btn')
 const form = document.querySelector('#form')
 const loader = document.querySelector('.loader')
+const readMorebtn = document.querySelector('#read-more-btn')
+const readMoreModal = document.querySelector('#read-more-modal')
+const closeModalBtn = document.querySelector('#close-modal-btn')
 
+// MODAL
+closeModalBtn.addEventListener('click', () => {
+  closeModal()
+})
+
+readMorebtn.addEventListener('click', () => {
+  readMoreModal.classList.add('show')
+})
+
+window.addEventListener('keydown', (e) => {
+  if (e.key == 'Escape') {
+    closeModal()
+  }
+})
+
+function closeModal() {
+  readMoreModal.classList.remove('show')
+  window.removeEventListener('keydown')
+}
+
+// DATA FOR SNAKE
 async function fetchHandler(user = 'dieBijacz') {
   grid.innerHTML = ''
   loader.classList.add('show')
