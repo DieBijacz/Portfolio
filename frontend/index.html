@@ -10,12 +10,20 @@
   <script src="snake/game.js" defer type="module"></script>
   <script src="main.js" defer type="module"></script>
   <script src="https://kit.fontawesome.com/67ecc2e8d4.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="icon" href="masta.png" type="image/x-icon">
 
 </head>
 
 <body>
+  <div id="navbar">
+    <div class="container">
+      <div class="menu">
+        <a href="#about">ABOUT</a>
+        <a href="#snake">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+  </div>
   <div class="scroll-container">
     <section>
       <div class="container hero">
@@ -27,19 +35,25 @@
           </div>
           <p>FRONT-END DEVELOPER</p>
           <div class="menu">
-            <a href="">ABOUT</a>
-            <a href="">PROJECTS</a>
-            <a href="">CONTACT</a>
+            <a href="#about">ABOUT</a>
+            <a href="#snake">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
           </div>
         </div>
         <div class="bottom-line">
-          <span>///</span> SCROLL DOWN TO SEE PROJECTS <span>///</span> CONTACT WITH ME VIA EMAIL <span>///</span> LET'S
-          WORK TOGETHER <span>///</span>CREATIVE <span>///</span> GOOD EYE FOR DETAILS <span>///</span> ORGANISED
-          <span>///</span>
+          <span>\\\</span>
+          <p>SCROLL DOWN TO SEE PROJECTS</p> <span>\\\</span>
+          <p>CONTACT WITH ME VIA EMAIL</p> <span>\\\</span>
+          <p>LET'S
+            WORK TOGETHER</p> <span>\\\</span>
+          <p>CREATIVE</p> <span>\\\</span>
+          <p>GOOD EYE FOR DETAILS </p> <span>\\\</span>
+          <p>ORGANISED</p>
+          <span>\\\</span>
         </div>
       </div>
     </section>
-    <section>
+    <section id="about">
       <div class="container">
         <div class="about">
           <div id="read-more-modal">
@@ -49,6 +63,7 @@
             </div>
             <hr>
             <div id="about-body">
+              <img src="https://www.codewars.com/users/DieBijacz/badges/large" alt="codewars">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae mollitia necessitatibus nobis. Iure alias,
               sunt a commodi aut placeat, dolores ea maiores natus quos quod ullam aperiam excepturi enim porro
               inventore similique odit molestiae recusandae sapiente. Animi quasi explicabo delectus, tenetur enim
@@ -85,13 +100,9 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="snake">
       <div class="container">
         <div class="snake-container">
-          <div>
-            <h1>Eat my Git-hub</h1>
-            <p>I've worked hard for last month so </p>
-          </div>
           <div class="snake">
             <h1>Git-Snake</h1>
             <div class="settings">
@@ -122,6 +133,7 @@
               </ul>
             </div>
             <div class="description">
+              <h1>How to use</h1>
               <ul>
                 <li>Enter Github user name like: 'shiffman'</li>
                 <li>Press Enter or click Find</li>
@@ -129,29 +141,96 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="project container">
-        <img src="images/masta/e-commerce-hero.png" alt="hero">
-        <div class="buttons">
           <div>
-            <button class="btn btn-white">
-              <- Prev</button>
-                <button class="btn btn-white">Next -></button>
+            <h3>More Projects <i class="fa-solid fa-arrow-down"></i></h3>
           </div>
         </div>
       </div>
     </section>
     <section>
       <div class="project container">
-        <img src="images/swift/hero2.png" alt="hero">
-        <div class="buttons">
-          <div>
-            <button class="btn btn-accent">
-              <- Prev</button>
-                <button class="btn btn-accent">Next -></button>
+        <div id="masta" class="project-hero">
+          <img src="images/masta/e-commerce-hero.png" alt="hero">
+          <div class="project-details">
+            <div class="title">Masta</div>
+            <div class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo maiores in harum odio velit suscipit atque
+              doloribus hic. Corporis expedita, facilis quas maiores eligendi aut reiciendis natus sequi quo voluptas.
+            </div>
+            <hr>
+            <div class="info">
+              <div>
+                <h1>Build with:</h1>
+                <ul>
+                  <li>React</li>
+                  <li>Bootstrap</li>
+                  <li>Redux</li>
+                  <li>MondoDb</li>
+                  <li>Express</li>
+                </ul>
+              </div>
+              <div>
+                <h1>Mobile friendly:</h1>
+                <div class="screens">
+                  <img src="images/masta/e-commerce-phone1.png" alt="phone1">
+                  <img src="images/masta/e-commerce-phone2.png" alt="phone2">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="info-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus rem, iure voluptate dolorum dolore
+              tenetur facere veritatis iste provident voluptas. Eveniet beatae quam totam in assumenda accusamus
+              libero asperiores, maiores quis quia distinctio odit modi aspernatur pariatur eius officia? Porro id
+              excepturi soluta vero mollitia cupiditate suscipit laudantium odit rerum.
+              <img src="images/masta/e-commerce-main1.png" alt="main">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsum nobis, commodi, sunt at nam
+              perspiciatis minus aspernatur molestiae numquam velit odio officiis iure! Et, voluptatibus quos. Ipsa
+              perspiciatis nostrum ex adipisci vero minima officia, ipsam et. Nulla alias cum laudantium similique?
+              Voluptatum reprehenderit, blanditiis deserunt perspiciatis laborum similique excepturi! Eaque quam,
+              excepturi quas quisquam amet id sunt possimus? Repellendus consectetur sint, molestiae ad laudantium
+              laborum doloremque minus esse aliquid quam deserunt illo excepturi fuga neque, quae animi aspernatur nobis
+              dolore doloribus soluta. Maxime perspiciatis consectetur dolore animi iure repellendus sequi soluta alias
+              nihil tenetur cumque explicabo nam, similique maiores ea recusandae porro, delectus odio quo eveniet,
+              corrupti dolores quibusdam numquam accusantium? Fugit sunt facere quasi distinctio quam praesentium error
+              eaque, expedita eveniet, aut laboriosam provident mollitia cupiditate deserunt rem accusantium eos maxime,
+              consectetur repellat. Quos consequuntur velit, delectus non ea enim iusto soluta maxime nihil esse ipsum
+              vel error dignissimos provident voluptas deleniti fugiat, iste mollitia voluptatem optio. Culpa, natus!
+              Eaque iusto, maxime et temporibus officiis ipsum necessitatibus quos ab consectetur doloremque nam qui
+              neque reiciendis fugit ratione illo eligendi suscipit porro provident natus aspernatur excepturi, labore
+              enim. In sit delectus iure minima sapiente magnam asperiores minus rerum autem?
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="project container">
+        <div id="swift" class="project-hero">
+          <img src="images/swift/hero2.png" alt="hero">
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container contact">
+        <div class="boxes">
+          <div class="box">
+            <h1>Contact</h1>
+            <form action="https://formsubmit.co/mastanilewicz@gmail.com" method="POST">
+              <textarea name="message" rows="5" placeholder="Send me a message" required></textarea>
+              <div>
+                <input name="name" type="text" placeholder="name" required>
+                <input type="text" name="_honey" style="display:none">
+                <input name="email" type="email" placeholder="email" required>
+                <button id="send" type="submit" class="btn btn-dark">Send</button>
+              </div>
+            </form>
+          </div>
+          <div class="box">
+            <h1>Thanks!</h1>
+            <p>Thank you for visiting my portolio. Hope you like it.</p>
+            <p>Feel free to send me a text</p>
+            <p>For the Horde!</p>
           </div>
         </div>
       </div>

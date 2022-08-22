@@ -7,6 +7,18 @@ const loader = document.querySelector('.loader')
 const readMorebtn = document.querySelector('#read-more-btn')
 const readMoreModal = document.querySelector('#read-more-modal')
 const closeModalBtn = document.querySelector('#close-modal-btn')
+const projectsHeros = document.querySelectorAll('.project-hero')
+
+// SMOOTH SCROLLING
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
 // MODAL
 closeModalBtn.addEventListener('click', () => {
@@ -25,6 +37,12 @@ window.addEventListener('keydown', (e) => {
 
 function closeModal() {
   readMoreModal.classList.remove('show')
+  projectsHeros.forEach(p => {
+    if (p.classList.contains('show')) {
+      p.classList.remove('show')
+    }
+  }
+  )
   window.removeEventListener('keydown')
 }
 
@@ -53,3 +71,12 @@ form.addEventListener('submit', async (e) => {
 })
 
 fetchHandler()
+
+// PROJECTS
+projectsHeros.forEach(project => {
+  project.addEventListener('click', (e) => openProject(e.target))
+})
+
+function openProject(project) {
+  project.parentElement.classList.add('show')
+}
