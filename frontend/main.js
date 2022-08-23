@@ -8,6 +8,8 @@ const readMorebtn = document.querySelector('#read-more-btn')
 const readMoreModal = document.querySelector('#read-more-modal')
 const closeModalBtn = document.querySelector('#close-modal-btn')
 const projects = document.querySelectorAll('.project')
+const closeProjectBtns = document.querySelectorAll('.close-project')
+
 
 // SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -73,8 +75,13 @@ projects.forEach(project => {
   })
 })
 
+closeProjectBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeProject()
+  })
+})
+
 function openProject(project) {
-  console.log(project)
   project.classList.add('show')
   window.addEventListener('keydown', (e) => {
     if (e.key == 'Escape') {

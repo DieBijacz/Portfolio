@@ -271,15 +271,36 @@ textarea {
     display: none;
     flex-direction: column;
     transition: 20s linear;
+    text-align: start;
 
     &.show {
       display: flex;
     }
 
-    #about-top {
+    #head {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    #body {
+      font-size: 1.2rem;
+
+      .focus {
+        a {
+          cursor: pointer;
+          height: 1rem;
+          color: $accent-color;
+
+          &:hover {
+            transform: scale(2);
+          }
+        }
+      }
     }
   }
 
@@ -446,7 +467,7 @@ textarea {
   .wrapper {
     display: grid;
     height: 100%;
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
     gap: 3rem;
     padding: 5rem 0;
 
@@ -465,8 +486,10 @@ textarea {
         &::after {
           transition: all 200ms linear;
           content: 'Masta';
-          font-size: 8rem;
-          text-align: center;
+          font-size: clamp(4rem, 10vw, 12rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-weight: bold;
           text-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
           background-color: rgba(0, 0, 0, 0.8);
@@ -486,6 +509,7 @@ textarea {
 
         &.show {
           .project-modal {
+            cursor: auto;
             position: absolute;
             background-color: $dark-color;
             inset: 0;
@@ -606,7 +630,10 @@ textarea {
         &::after {
           transition: all 200ms linear;
           content: 'Swiftqueue';
-          font-size: 8rem;
+          font-size: clamp(4rem, 10vw, 12rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
           text-align: center;
           font-weight: bold;
           text-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
@@ -620,6 +647,58 @@ textarea {
             opacity: 0;
           }
         }
+
+        .project-modal {
+          display: none;
+        }
+
+        &.show {
+          .project-modal {
+            position: absolute;
+            background-color: $dark-color;
+            inset: 0;
+            display: flex;
+            overflow-y: scroll;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            z-index: 8000;
+
+            .head {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+              padding-top: 3rem;
+
+              .title {
+                font-size: 3rem;
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+              }
+
+              p {
+                transition: 200ms;
+
+                a {
+                  font-size: 1.5rem;
+                  color: $accent-color;
+                  line-height: 2px;
+                  text-decoration: none;
+
+                }
+
+                &:hover {
+                  transform: scale(1.05);
+                }
+              }
+            }
+          }
+        }
+
       }
     }
   }
@@ -645,8 +724,7 @@ textarea {
     flex-direction: column;
 
     h1 {
-      font-size: 2rem;
-      color: $accent-color;
+      font-size: 3rem;
     }
 
     form {
@@ -675,74 +753,73 @@ textarea {
     margin: .5rem;
   }
 
-}
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
-  100% {
-    transform: rotate(360deg);
-  }
-}
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
 
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
 
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
 
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
 
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
 
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
 
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
 
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
 
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
 
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-@keyframes bounce {
-  40% {
-    transform: translateY(0);
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
   }
 
-  45% {
-    transform: translateY(10px);
-  }
+  @keyframes bounce {
+    40% {
+      transform: translateY(0);
+    }
 
-  50% {
-    transform: translateY(0);
+    45% {
+      transform: translateY(10px);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
   }
 }
