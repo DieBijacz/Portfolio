@@ -7,7 +7,7 @@ const loader = document.querySelector('.loader')
 const readMorebtn = document.querySelector('#read-more-btn')
 const readMoreModal = document.querySelector('#read-more-modal')
 const closeModalBtn = document.querySelector('#close-modal-btn')
-const projectsHeros = document.querySelectorAll('.project-hero')
+const projects = document.querySelectorAll('.project')
 
 // SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,22 +27,15 @@ closeModalBtn.addEventListener('click', () => {
 
 readMorebtn.addEventListener('click', () => {
   readMoreModal.classList.add('show')
-})
-
-window.addEventListener('keydown', (e) => {
-  if (e.key == 'Escape') {
-    closeModal()
-  }
+  window.addEventListener('keydown', (e) => {
+    if (e.key == 'Escape') {
+      closeModal()
+    }
+  })
 })
 
 function closeModal() {
   readMoreModal.classList.remove('show')
-  projectsHeros.forEach(p => {
-    if (p.classList.contains('show')) {
-      p.classList.remove('show')
-    }
-  }
-  )
   window.removeEventListener('keydown')
 }
 
@@ -73,10 +66,26 @@ form.addEventListener('submit', async (e) => {
 fetchHandler()
 
 // PROJECTS
-projectsHeros.forEach(project => {
-  project.addEventListener('click', (e) => openProject(e.target))
+
+projects.forEach(project => {
+  project.addEventListener('click', (e) => {
+    openProject(e.target)
+  })
 })
 
 function openProject(project) {
-  project.parentElement.classList.add('show')
+  console.log(project)
+  project.classList.add('show')
+  window.addEventListener('keydown', (e) => {
+    if (e.key == 'Escape') {
+      closeProject()
+    }
+  })
+}
+
+function closeProject() {
+  projects.forEach(project => {
+    project.classList.remove('show')
+  })
+  window.removeEventListener('keydown',)
 }

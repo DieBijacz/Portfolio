@@ -498,28 +498,70 @@ textarea {
           animation-timing-function: ease;
 }
 
-.project {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+#projects {
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-.project .project-hero .project-details {
+#projects .wrapper {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  -ms-grid-rows: (minmax(300px, 1fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 5rem 0;
+}
+
+#projects .wrapper .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+#projects .wrapper .project.masta {
+  background-image: url(images/masta/e-commerce-hero.png);
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+#projects .wrapper .project.masta::after {
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  content: 'Masta';
+  font-size: 8rem;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+#projects .wrapper .project.masta:hover::after {
+  opacity: 0;
+}
+
+#projects .wrapper .project.masta .project-modal {
   display: none;
 }
 
-.project .project-hero.show .project-details {
-  padding: 5rem 0;
-  overflow: hidden;
-  overflow-y: scroll;
-  height: 100vh;
-  background-color: #0D1117;
+#projects .wrapper .project.masta.show .project-modal {
   position: absolute;
+  background-color: #0D1117;
   inset: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: scroll;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -530,58 +572,101 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8000;
 }
 
-.project .project-hero.show .project-details img {
-  height: 100%;
-  width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+#projects .wrapper .project.masta.show .project-modal .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 3rem;
 }
 
-.project .project-hero.show .project-details img:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
-}
-
-.project .project-hero.show .project-details .title {
+#projects .wrapper .project.masta.show .project-modal .head .title {
   font-size: 3rem;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.project .project-hero.show .project-details h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+#projects .wrapper .project.masta.show .project-modal .head p {
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
-.project .project-hero.show .project-details .info {
+#projects .wrapper .project.masta.show .project-modal .head p a {
+  font-size: 1.5rem;
+  color: #FF4C29;
+  line-height: 2px;
+  text-decoration: none;
+}
+
+#projects .wrapper .project.masta.show .project-modal .head p:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#projects .wrapper .project.masta.show .project-modal .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-1 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  margin: 3rem;
-  width: 100%;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 0;
+  gap: 3rem;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile {
   text-align: center;
 }
 
-.project .project-hero.show .project-details .info .screens {
+#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile .screens {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 200px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+  margin: 1rem;
 }
 
-.project .project-hero.show .project-details .info-2 {
-  height: 500px;
+#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile .screens img {
+  height: 300px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -595,6 +680,70 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 img {
+  height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  margin: 1rem 0;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5rem;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .screens {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .screens img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
+#projects .wrapper .project.swift {
+  background-image: url(images/swift/hero2.png);
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+#projects .wrapper .project.swift::after {
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  content: 'Swiftqueue';
+  font-size: 8rem;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+#projects .wrapper .project.swift:hover::after {
+  opacity: 0;
 }
 
 .contact {
