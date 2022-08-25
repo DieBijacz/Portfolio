@@ -639,6 +639,12 @@ textarea {
   width: 100vw;
   height: 100vh;
   z-index: 8000;
+  padding: 3rem 0;
+}
+
+#projects .wrapper .project.masta.show .project-modal h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 #projects .wrapper .project.masta.show .project-modal .head {
@@ -652,7 +658,6 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding-top: 3rem;
 }
 
 #projects .wrapper .project.masta.show .project-modal .head .title {
@@ -684,29 +689,16 @@ textarea {
           transform: scale(1.05);
 }
 
-#projects .wrapper .project.masta.show .project-modal .body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-1 {
+#projects .wrapper .project.masta.show .project-modal .body .panel {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  margin: 3rem 0;
+  padding: 3rem 0;
   gap: 3rem;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile {
   text-align: center;
+  width: 100%;
+  position: relative;
 }
 
 #projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile .screens {
@@ -730,38 +722,16 @@ textarea {
      object-fit: cover;
 }
 
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3rem;
-  text-align: center;
-  position: relative;
-  width: 100%;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 h1 {
-  color: #FF4C29;
-  font-size: 2rem;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin: 1rem 0;
-}
-
 #projects .wrapper .project.masta.show .project-modal .body .panel-2 .arrow {
   width: 20%;
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 {
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -769,27 +739,81 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right #arrow-down {
+  width: 10%;
+  position: absolute;
+  top: 45%;
+  left: 75%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 5rem;
 }
 
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .screens {
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 1px solid #FF4C29;
+  border-radius: 100vw;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login input {
+  width: 30vw;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin {
   display: -ms-grid;
   display: grid;
-  gap: 1rem;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
 }
 
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .screens img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 1px solid #FF4C29;
+  border-radius: 100vw;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login input {
+  width: 30vw;
 }
 
 #projects .wrapper .project.swift {
@@ -834,6 +858,7 @@ textarea {
   cursor: auto;
   position: absolute;
   background-color: #0D1117;
+  inset: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -848,10 +873,15 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  inset: 0;
   width: 100vw;
   height: 100vh;
   z-index: 8000;
+  padding: 3rem 0;
+}
+
+#projects .wrapper .project.swift.show .project-modal h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 #projects .wrapper .project.swift.show .project-modal .head {
@@ -865,7 +895,6 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding-top: 3rem;
 }
 
 #projects .wrapper .project.swift.show .project-modal .head .title {
@@ -895,6 +924,60 @@ textarea {
 #projects .wrapper .project.swift.show .project-modal .head p:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 3rem 0;
+  gap: 3rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-2 .mobile .screens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-2 .mobile .screens img {
+  height: 300px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-2 .scrolling-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-2 .scrolling-container img {
+  -webkit-animation: scroll infinite 15s;
+          animation: scroll infinite 15s;
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-3 img {
+  width: calc(min(500px, 100%));
+}
+
+#projects .wrapper .project.swift.show .project-modal .body .panel-3 ul {
+  font-size: 1.5rem;
+  list-style: disc;
+  text-align: start;
+  padding: 0 3rem;
 }
 
 .contact {
@@ -945,17 +1028,8 @@ textarea {
           flex-direction: column;
 }
 
-.contact .box form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.contact .box form div input {
+.contact .box form textarea,
+.contact .box form input {
   width: 100%;
 }
 
@@ -1114,6 +1188,52 @@ textarea {
             transform: translateY(10px);
   }
   50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(calc(-100% + 300px));
+            transform: translateY(calc(-100% + 300px));
+  }
+  75% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(calc(-100% + 300px));
+            transform: translateY(calc(-100% + 300px));
+  }
+  75% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }

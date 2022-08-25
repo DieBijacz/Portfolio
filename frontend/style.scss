@@ -549,13 +549,18 @@ textarea {
             width: 100vw;
             height: 100vh;
             z-index: 8000;
+            padding: 3rem 0;
+
+            h1 {
+              font-size: 2rem;
+              margin-bottom: 1rem;
+            }
 
             .head {
               display: flex;
               justify-content: space-between;
               align-items: center;
               width: 100%;
-              padding-top: 3rem;
 
               .title {
                 font-size: 3rem;
@@ -582,20 +587,18 @@ textarea {
             }
 
             .body {
-              display: flex;
-              flex-direction: column;
-              height: 100%;
-              width: 100%;
-
-              .panel-1 {
+              .panel {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                margin: 3rem 0;
+                padding: 3rem 0;
                 gap: 3rem;
+                text-align: center;
+                width: 100%;
+                position: relative;
+              }
 
+              .panel-1 {
                 .mobile {
-                  text-align: center;
-
                   .screens {
                     display: flex;
                     justify-content: center;
@@ -613,47 +616,74 @@ textarea {
               }
 
               .panel-2 {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                gap: 3rem;
-                text-align: center;
-                position: relative;
-                width: 100%;
-
-                h1 {
-                  color: $accent-color;
-                  font-size: 2rem;
-                }
-
-                img {
-                  object-fit: cover;
-                  margin: 1rem 0;
-                }
-
                 .arrow {
                   width: 20%;
                   position: absolute;
-                  top: 50%;
+                  top: 25%;
                   left: 50%;
                   transform: translate(-50%, -50%);
+                }
+
+                #right {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  height: 100%;
+
+                  #arrow-down {
+                    width: 10%;
+                    position: absolute;
+                    top: 45%;
+                    left: 75%;
+                    transform: translate(-50%, 0);
+                  }
+
+                  .paypal {
+                    display: grid;
+                    grid-template-rows: repeat(2, 1fr);
+
+                    .login {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+
+                      button {
+                        cursor: pointer;
+                        font-size: 1.2rem;
+                        padding: 1rem;
+                        border: 1px solid $accent-color;
+                        border-radius: 100vw;
+                      }
+
+                      input {
+                        width: 30vw;
+                      }
+                    }
+                  }
                 }
               }
 
               .panel-3 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding-bottom: 5rem;
-
-                .screens {
+                .admin {
                   display: grid;
-                  gap: 1rem;
-                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  grid-template-rows: repeat(2, 1fr);
 
-                  img {
-                    object-fit: cover;
-                    height: 100%;
+                  .login {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                      cursor: pointer;
+                      font-size: 1.2rem;
+                      padding: 1rem;
+                      border: 1px solid $accent-color;
+                      border-radius: 100vw;
+                    }
+
+                    input {
+                      width: 30vw;
+                    }
                   }
                 }
               }
@@ -698,22 +728,27 @@ textarea {
             cursor: auto;
             position: absolute;
             background-color: $dark-color;
+            inset: 0;
             display: flex;
             overflow-y: scroll;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            inset: 0;
             width: 100vw;
             height: 100vh;
             z-index: 8000;
+            padding: 3rem 0;
+
+            h1 {
+              font-size: 2rem;
+              margin-bottom: 1rem;
+            }
 
             .head {
               display: flex;
               justify-content: space-between;
               align-items: center;
               width: 100%;
-              padding-top: 3rem;
 
               .title {
                 font-size: 3rem;
@@ -738,9 +773,64 @@ textarea {
                 }
               }
             }
+
+            .body {
+              .panel {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                padding: 3rem 0;
+                gap: 3rem;
+                text-align: center;
+                width: 100%;
+                position: relative;
+              }
+
+              .panel-2 {
+
+
+                .mobile {
+                  .screens {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    margin: 1rem;
+
+                    img {
+                      height: 300px;
+                      width: auto;
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+
+              .panel-2 {
+                .scrolling-container {
+                  height: 300px;
+                  overflow: hidden;
+
+                  img {
+                    animation: scroll infinite 15s;
+                  }
+                }
+              }
+
+              .panel-3 {
+                img {
+                  width: calc(min(500px, 100%));
+                }
+
+                ul {
+                  font-size: 1.5rem;
+                  list-style: disc;
+                  text-align: start;
+                  padding: 0 3rem;
+                }
+              }
+            }
           }
         }
-
       }
     }
   }
@@ -775,14 +865,9 @@ textarea {
       display: flex;
       flex-direction: column;
 
-      div {
-        display: flex;
+      textarea,
+      input {
         width: 100%;
-        justify-content: space-between;
-
-        input {
-          width: 100%;
-        }
       }
     }
   }
@@ -869,6 +954,28 @@ textarea {
   }
 
   50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(calc(-100% + 300px));
+  }
+
+  75% {
+    transform: translateY(0);
+  }
+
+  100% {
     transform: translateY(0);
   }
 }
