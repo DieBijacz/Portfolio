@@ -182,13 +182,13 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 
   img {
     width: calc(min(100px, 15vw));
   }
 
   .name {
-    padding: 5rem 0;
     font-size: clamp(4rem, 10vw, 12rem);
     line-height: clamp(3.1rem, 8vw, 10rem);
     color: $dark-color;
@@ -304,7 +304,7 @@ textarea {
           gap: 1rem;
 
           li {
-            width: calc(min(300px, 100%));
+            width: calc(min(400px, 100%));
             margin: 1rem;
           }
         }
@@ -490,7 +490,6 @@ textarea {
 // PROJECTS
 #projects {
   position: relative;
-  width: 100vw;
   height: 100vh;
 
   .wrapper {
@@ -590,7 +589,7 @@ textarea {
 
               .panel-1 {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
                 margin: 3rem 0;
                 gap: 3rem;
 
@@ -614,16 +613,29 @@ textarea {
               }
 
               .panel-2 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 3rem;
+                text-align: center;
+                position: relative;
+                width: 100%;
+
+                h1 {
+                  color: $accent-color;
+                  font-size: 2rem;
+                }
 
                 img {
-                  height: 700px;
                   object-fit: cover;
-                  width: auto;
                   margin: 1rem 0;
+                }
+
+                .arrow {
+                  width: 20%;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
                 }
               }
 
@@ -739,10 +751,11 @@ textarea {
   display: grid;
   place-items: center;
   height: 100%;
+  text-align: center;
 
   .boxes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 3rem;
   }
 
@@ -781,6 +794,12 @@ textarea {
   .btn {
     padding: .5rem 1.5rem;
     margin: .5rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .arrow {
+    display: none;
   }
 }
 

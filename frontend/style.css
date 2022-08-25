@@ -182,6 +182,7 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100%;
 }
 
 .hero img {
@@ -189,7 +190,6 @@ textarea {
 }
 
 .hero .name {
-  padding: 5rem 0;
   font-size: clamp(4rem, 10vw, 12rem);
   line-height: clamp(3.1rem, 8vw, 10rem);
   color: #0D1117;
@@ -342,7 +342,7 @@ textarea {
 }
 
 .about #read-more-modal #body .me ul li {
-  width: calc(min(300px, 100%));
+  width: calc(min(400px, 100%));
   margin: 1rem;
 }
 
@@ -556,7 +556,6 @@ textarea {
 
 #projects {
   position: relative;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -700,8 +699,8 @@ textarea {
 #projects .wrapper .project.masta.show .project-modal .body .panel-1 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   margin: 3rem 0;
   gap: 3rem;
 }
@@ -732,27 +731,34 @@ textarea {
 }
 
 #projects .wrapper .project.masta.show .project-modal .body .panel-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 h1 {
+  color: #FF4C29;
+  font-size: 2rem;
 }
 
 #projects .wrapper .project.masta.show .project-modal .body .panel-2 img {
-  height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
-  width: auto;
   margin: 1rem 0;
+}
+
+#projects .wrapper .project.masta.show .project-modal .body .panel-2 .arrow {
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 #projects .wrapper .project.masta.show .project-modal .body .panel-3 {
@@ -896,13 +902,14 @@ textarea {
   display: grid;
   place-items: center;
   height: 100%;
+  text-align: center;
 }
 
 .contact .boxes {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 3rem;
 }
 
@@ -957,6 +964,12 @@ textarea {
   .btn {
     padding: .5rem 1.5rem;
     margin: .5rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .arrow {
+    display: none;
   }
 }
 

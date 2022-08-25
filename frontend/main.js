@@ -82,7 +82,9 @@ closeProjectBtns.forEach(btn => {
 })
 
 function openProject(project) {
-  project.classList.add('show')
+  if (project.classList.contains('project')) {
+    project.classList.add('show')
+  }
   window.addEventListener('keydown', (e) => {
     if (e.key == 'Escape') {
       closeProject()
