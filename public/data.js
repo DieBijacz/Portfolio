@@ -5,7 +5,7 @@ const userInput = document.querySelector('#find-user')
 export async function getData(USER) {
   let arr = []
   let data = []
-  await fetch(`http://127.0.0.1:5000/${USER}`)
+  await fetch(`http://localhost:5000/${USER}`)
     .then(response => response.json())
     .then(data => arr = [...data])
     .catch(error => {

@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const request = require('request')
 const cheerio = require('cheerio')
+require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
 
@@ -11,7 +12,7 @@ app.listen(PORT, () => {
 })
 app.use(express.static('public'))
 app.use(cors({
-  origin: 'http://127.0.0.1:5500'
+  origin: 'http://127.0.0.1:5000'
 }))
 
 app.get('/:user', (req, res, next) => {
