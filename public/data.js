@@ -5,7 +5,7 @@ const userInput = document.querySelector('#find-user')
 export async function getData(USER) {
   let arr = []
   let data = []
-  await fetch(`https://masta-official.herokuapp.com/${USER}`)
+  await fetch(`https://masta.uk/${USER}`)
     .then(response => response.json())
     .then(data => arr = [...data])
     .catch(error => {
