@@ -1,14 +1,18 @@
-const request = require('request')
-const cheerio = require('cheerio')
 const express = require('express')
 const cors = require('cors')
+const request = require('request')
+const cheerio = require('cheerio')
+
+const PORT = process.env.PORT || 5000
 
 const app = express()
-app.listen(5000)
+app.listen(PORT, () => {
+  console.log(`Starting server as ${PORT}`)
+})
+app.use(express.static('public'))
 app.use(cors({
   origin: 'http://127.0.0.1:5500'
 }))
-
 
 app.get('/:user', (req, res, next) => {
   const { user } = req.params
