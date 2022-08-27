@@ -5,7 +5,7 @@ const userInput = document.querySelector('#find-user')
 export async function getData(USER) {
   let arr = []
   let data = []
-  await fetch(`https://masta.uk/${USER}`)
+  await fetch(`/${USER}`)
     .then(response => response.json())
     .then(data => arr = [...data])
     .catch(error => {

@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 })
 app.use(express.static('public'))
 app.use(cors({
-  origin: 'https://masta.uk/'
+  origin: 'https://www.masta.uk/'
 }))
 
 app.get('/:user', (req, res, next) => {
