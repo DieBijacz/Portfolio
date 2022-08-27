@@ -11,9 +11,10 @@ app.listen(PORT, () => {
   console.log(`Starting server as ${PORT}`)
 })
 app.use(express.static('public'))
-app.use(cors({
-  origin: 'https://www.masta.uk/'
-}))
+
+// app.use(cors({
+//   origin: 'https://www.masta.uk/'
+// }))
 
 app.get('/:user', (req, res, next) => {
   const { user } = req.params
