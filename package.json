@@ -8,5 +8,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "request": "^2.88.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieBijacz/Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DieBijacz/Portfolio/issues"
+  },
+  "homepage": "https://github.com/DieBijacz/Portfolio#readme",
   "description": ""
 }
