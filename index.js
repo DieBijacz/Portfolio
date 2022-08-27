@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 })
 app.use(express.static('public'))
 app.use(cors({
-  origin: 'http://127.0.0.1:5000'
+  origin: 'https://masta-official.herokuapp.com/'
 }))
 
 app.get('/:user', (req, res, next) => {
