@@ -42,6 +42,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 hr {
   border: 1px solid #2f353d;
   margin: 1rem 0;
@@ -58,7 +62,7 @@ hr {
 .btn {
   cursor: pointer;
   border: none;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 1rem;
@@ -191,7 +195,7 @@ textarea {
 }
 
 .hero .name {
-  font-size: clamp(3.3rem, 10vw, 12rem);
+  font-size: clamp(3.6rem, 10vw, 12rem);
   line-height: clamp(3rem, 8vw, 10rem);
   color: #0D1117;
   text-align: start;
@@ -212,7 +216,7 @@ textarea {
 }
 
 .hero .name .menu {
-  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 100;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,7 +227,7 @@ textarea {
           flex-direction: column;
   line-height: 1;
   width: calc(min(500px, 80%));
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .hero .name .menu a {
@@ -251,7 +255,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .hero .bottom-line .text {
@@ -369,23 +373,62 @@ textarea {
 .about .box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 5rem;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
 }
 
-.about .box div .icons {
+.about .box .me {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.about .box .me .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .box .me .buttons a {
+  display: block;
+}
+
+.about .box .skills {
+  width: 100%;
+}
+
+.about .box .skills .icons {
   margin-top: 1rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.about .box div .icons p {
+.about .box .skills .icons p {
   padding: 1rem 2rem;
   background-color: #0D1117;
+  margin: 1rem;
+  width: calc(max(150px, 10vw));
   text-align: center;
   font-weight: bold;
   border-radius: 100vw;
@@ -1043,7 +1086,7 @@ textarea {
   margin-top: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 910px) {
   .hero img {
     width: 80px;
   }

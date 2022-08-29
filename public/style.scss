@@ -17,8 +17,6 @@ $green-2: #006D32;
 $green-1: #0E4429;
 $green-00: #161B22;
 
-
-
 .scroll-container {
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
@@ -53,6 +51,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 hr {
   border: 1px solid $shadow-color;
   margin: 1rem 0;
@@ -69,7 +71,7 @@ hr {
 .btn {
   cursor: pointer;
   border: none;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 1rem;
@@ -190,7 +192,7 @@ textarea {
   }
 
   .name {
-    font-size: clamp(3.3rem, 10vw, 12rem);
+    font-size: clamp(3.6rem, 10vw, 12rem);
     line-height: clamp(3rem, 8vw, 10rem);
     color: $dark-color;
     text-align: start;
@@ -210,13 +212,13 @@ textarea {
     }
 
     .menu {
-      font-size: clamp(1.8rem, 2.5vw, 3rem);
+      font-size: clamp(2rem, 3vw, 3rem);
       font-weight: 100;
       display: flex;
       flex-direction: column;
       line-height: 1;
       width: calc(min(500px, 80%));
-      margin-top: 1rem;
+      margin-top: 2rem;
 
       a {
         margin-top: 10px;
@@ -241,7 +243,7 @@ textarea {
     border-bottom: 2px solid $dark-color;
     display: flex;
     overflow: hidden;
-    margin: 1rem 0;
+    margin-bottom: 2rem;
 
     .text {
       display: flex;
@@ -336,20 +338,40 @@ textarea {
 
   .box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
 
-    div {
+    .me {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .buttons {
+        display: flex;
+
+        a {
+          display: block;
+        }
+      }
+    }
+
+    .skills {
+      width: 100%;
 
       .icons {
         margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
 
         p {
           padding: 1rem 2rem;
           background-color: $dark-color;
+          margin: 1rem;
+          width: calc(max(150px, 10vw));
           text-align: center;
           font-weight: bold;
           border-radius: 100vw;
@@ -879,7 +901,7 @@ textarea {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 910px) {
   .hero {
     img {
       width: 80px;
