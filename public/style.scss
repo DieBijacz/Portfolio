@@ -35,8 +35,12 @@ $green-00: #161B22;
   }
 }
 
+body {
+  position: relative;
+}
+
 .hide {
-  display: none;
+  display: none !important;
 }
 
 img {
@@ -78,6 +82,11 @@ hr {
   border-radius: 100vw;
   transition: 300ms;
   outline: none;
+}
+
+.copy-btn {
+  padding: 1rem;
+  margin: 0;
 }
 
 textarea,
@@ -243,7 +252,7 @@ textarea {
     border-bottom: 2px solid $dark-color;
     display: flex;
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 
     .text {
       display: flex;
@@ -511,10 +520,195 @@ textarea {
 }
 
 // PROJECTS
-#projects {
-  position: relative;
-  height: 100vh;
+#masta {
+  .body {
+    input {
+      width: calc(max(30vw, 200px));
+      margin: 0 1rem 0 0;
+    }
 
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+
+      button {
+        cursor: pointer;
+        font-size: 1.2rem;
+        border: none;
+      }
+    }
+
+    .panel-1 {
+      .mobile {
+        .screens {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin: 1rem;
+
+          img {
+            height: 300px;
+            width: auto;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .panel-2 {
+      .arrow {
+        width: 20%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        #arrow-down {
+          width: 10%;
+          position: absolute;
+          top: 45%;
+          left: 75%;
+          transform: translate(-50%, 0);
+        }
+
+        .paypal {
+          display: grid;
+          grid-template-rows: repeat(2, 1fr);
+        }
+      }
+    }
+
+    .panel-3 {
+      .admin {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+#swift {
+  .body {
+    .panel-2 {
+      .mobile {
+        .screens {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin: 1rem;
+
+          img {
+            height: 300px;
+            width: auto;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .panel-2 {
+      .scrolling-container {
+        height: 300px;
+        overflow: hidden;
+
+        img {
+          animation: scroll infinite 15s;
+        }
+      }
+    }
+
+    .panel-3 {
+      img {
+        width: calc(min(500px, 100%));
+      }
+
+      ul {
+        font-size: 1.5rem;
+        list-style: disc;
+        text-align: start;
+        padding: 0 3rem;
+      }
+    }
+  }
+}
+
+.project-modal {
+  color: $grey-color;
+  position: absolute;
+  cursor: auto;
+  position: absolute;
+  background-color: $dark-color;
+  inset: 0;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem 0;
+  z-index: 9;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      transition: 200ms;
+
+      a {
+        font-size: 1.5rem;
+        color: $accent-color;
+        line-height: 2px;
+        text-decoration: none;
+
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .body {
+    .panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      padding: 3rem 0;
+      gap: 3rem;
+      text-align: center;
+      width: 100%;
+      position: relative;
+    }
+  }
+}
+
+#projects {
   .wrapper {
     display: grid;
     height: 100%;
@@ -523,9 +717,6 @@ textarea {
     padding: 5rem 0;
 
     .project {
-      display: flex;
-      height: 100%;
-      justify-content: space-between;
       cursor: pointer;
 
       &.masta {
@@ -554,165 +745,6 @@ textarea {
           }
         }
 
-        .project-modal {
-          display: none;
-        }
-
-        &.show {
-          .project-modal {
-            cursor: auto;
-            position: absolute;
-            background-color: $dark-color;
-            inset: 0;
-            display: flex;
-            overflow-y: scroll;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            z-index: 8000;
-            padding: 3rem 0;
-
-            h1 {
-              font-size: 2rem;
-              margin-bottom: 1rem;
-            }
-
-            .head {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              width: 100%;
-
-              .title {
-                font-size: 3rem;
-                font-weight: bold;
-                display: flex;
-                flex-direction: column;
-              }
-
-              p {
-                transition: 200ms;
-
-                a {
-                  font-size: 1.5rem;
-                  color: $accent-color;
-                  line-height: 2px;
-                  text-decoration: none;
-
-                }
-
-                &:hover {
-                  transform: scale(1.05);
-                }
-              }
-            }
-
-            .body {
-              .panel {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                padding: 3rem 0;
-                gap: 3rem;
-                text-align: center;
-                width: 100%;
-                position: relative;
-              }
-
-              .panel-1 {
-                .mobile {
-                  .screens {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    margin: 1rem;
-
-                    img {
-                      height: 300px;
-                      width: auto;
-                      object-fit: cover;
-                    }
-                  }
-                }
-              }
-
-              .panel-2 {
-                .arrow {
-                  width: 20%;
-                  position: absolute;
-                  top: 25%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                }
-
-                #right {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: space-between;
-                  height: 100%;
-
-                  #arrow-down {
-                    width: 10%;
-                    position: absolute;
-                    top: 45%;
-                    left: 75%;
-                    transform: translate(-50%, 0);
-                  }
-
-                  .paypal {
-                    display: grid;
-                    grid-template-rows: repeat(2, 1fr);
-
-                    .login {
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-
-                      button {
-                        cursor: pointer;
-                        font-size: 1.2rem;
-                        padding: 1rem;
-                        border: 1px solid $accent-color;
-                        border-radius: 100vw;
-                      }
-
-                      input {
-                        width: 30vw;
-                      }
-                    }
-                  }
-                }
-              }
-
-              .panel-3 {
-                .admin {
-                  display: grid;
-                  grid-template-rows: repeat(2, 1fr);
-
-                  .login {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    button {
-                      cursor: pointer;
-                      font-size: 1.2rem;
-                      padding: 1rem;
-                      border: 1px solid $accent-color;
-                      border-radius: 100vw;
-                    }
-
-                    input {
-                      width: 30vw;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
       }
 
       &.swift {
@@ -739,119 +771,6 @@ textarea {
         &:hover {
           &::after {
             opacity: 0;
-          }
-        }
-
-        .project-modal {
-          display: none;
-        }
-
-        &.show {
-          .project-modal {
-            cursor: auto;
-            position: absolute;
-            background-color: $dark-color;
-            inset: 0;
-            display: flex;
-            overflow-y: scroll;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            z-index: 8000;
-            padding: 3rem 0;
-
-            h1 {
-              font-size: 2rem;
-              margin-bottom: 1rem;
-            }
-
-            .head {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              width: 100%;
-
-              .title {
-                font-size: 3rem;
-                font-weight: bold;
-                display: flex;
-                flex-direction: column;
-              }
-
-              p {
-                transition: 200ms;
-
-                a {
-                  font-size: 1.5rem;
-                  color: $accent-color;
-                  line-height: 2px;
-                  text-decoration: none;
-
-                }
-
-                &:hover {
-                  transform: scale(1.05);
-                }
-              }
-            }
-
-            .body {
-              .panel {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                padding: 3rem 0;
-                gap: 3rem;
-                text-align: center;
-                width: 100%;
-                position: relative;
-              }
-
-              .panel-2 {
-
-
-                .mobile {
-                  .screens {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    margin: 1rem;
-
-                    img {
-                      height: 300px;
-                      width: auto;
-                      object-fit: cover;
-                    }
-                  }
-                }
-              }
-
-              .panel-2 {
-                .scrolling-container {
-                  height: 300px;
-                  overflow: hidden;
-
-                  img {
-                    animation: scroll infinite 15s;
-                  }
-                }
-              }
-
-              .panel-3 {
-                img {
-                  width: calc(min(500px, 100%));
-                }
-
-                ul {
-                  font-size: 1.5rem;
-                  list-style: disc;
-                  text-align: start;
-                  padding: 0 3rem;
-                }
-              }
-            }
           }
         }
       }
@@ -900,6 +819,7 @@ textarea {
     }
   }
 }
+
 
 @media (max-width: 910px) {
   .hero {

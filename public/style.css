@@ -26,8 +26,12 @@
   color: #D2D2D2;
 }
 
+body {
+  position: relative;
+}
+
 .hide {
-  display: none;
+  display: none !important;
 }
 
 img {
@@ -70,6 +74,11 @@ hr {
   -webkit-transition: 300ms;
   transition: 300ms;
   outline: none;
+}
+
+.copy-btn {
+  padding: 1rem;
+  margin: 0;
 }
 
 textarea,
@@ -255,7 +264,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .hero .bottom-line .text {
@@ -598,9 +607,223 @@ textarea {
           animation-timing-function: ease;
 }
 
-#projects {
-  position: relative;
+#masta .body input {
+  width: calc(max(30vw, 200px));
+  margin: 0 1rem 0 0;
+}
+
+#masta .body .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+#masta .body .login button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: none;
+}
+
+#masta .body .panel-1 .mobile .screens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+#masta .body .panel-1 .mobile .screens img {
+  height: 300px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#masta .body .panel-2 .arrow {
+  width: 20%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#masta .body .panel-2 #right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+#masta .body .panel-2 #right #arrow-down {
+  width: 10%;
+  position: absolute;
+  top: 45%;
+  left: 75%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+#masta .body .panel-2 #right .paypal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+#masta .body .panel-3 .admin {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+#swift .body .panel-2 .mobile .screens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+#swift .body .panel-2 .mobile .screens img {
+  height: 300px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#swift .body .panel-2 .scrolling-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+#swift .body .panel-2 .scrolling-container img {
+  -webkit-animation: scroll infinite 15s;
+          animation: scroll infinite 15s;
+}
+
+#swift .body .panel-3 img {
+  width: calc(min(500px, 100%));
+}
+
+#swift .body .panel-3 ul {
+  font-size: 1.5rem;
+  list-style: disc;
+  text-align: start;
+  padding: 0 3rem;
+}
+
+.project-modal {
+  color: #D2D2D2;
+  position: absolute;
+  cursor: auto;
+  position: absolute;
+  background-color: #0D1117;
+  inset: 0;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
   height: 100vh;
+  padding: 3rem 0;
+  z-index: 9;
+}
+
+.project-modal h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-modal .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.project-modal .head .title {
+  font-size: 3rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project-modal .head p {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.project-modal .head p a {
+  font-size: 1.5rem;
+  color: #FF4C29;
+  line-height: 2px;
+  text-decoration: none;
+}
+
+.project-modal .head p:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.project-modal .body .panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 3rem 0;
+  gap: 3rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
 }
 
 #projects .wrapper {
@@ -614,13 +837,6 @@ textarea {
 }
 
 #projects .wrapper .project {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   cursor: pointer;
 }
 
@@ -657,209 +873,6 @@ textarea {
   opacity: 0;
 }
 
-#projects .wrapper .project.masta .project-modal {
-  display: none;
-}
-
-#projects .wrapper .project.masta.show .project-modal {
-  cursor: auto;
-  position: absolute;
-  background-color: #0D1117;
-  inset: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-y: scroll;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 8000;
-  padding: 3rem 0;
-}
-
-#projects .wrapper .project.masta.show .project-modal h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#projects .wrapper .project.masta.show .project-modal .head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-
-#projects .wrapper .project.masta.show .project-modal .head .title {
-  font-size: 3rem;
-  font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#projects .wrapper .project.masta.show .project-modal .head p {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-#projects .wrapper .project.masta.show .project-modal .head p a {
-  font-size: 1.5rem;
-  color: #FF4C29;
-  line-height: 2px;
-  text-decoration: none;
-}
-
-#projects .wrapper .project.masta.show .project-modal .head p:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  padding: 3rem 0;
-  gap: 3rem;
-  text-align: center;
-  width: 100%;
-  position: relative;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile .screens {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-  margin: 1rem;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-1 .mobile .screens img {
-  height: 300px;
-  width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 .arrow {
-  width: 20%;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100%;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right #arrow-down {
-  width: 10%;
-  position: absolute;
-  top: 45%;
-  left: 75%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login button {
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 1rem;
-  border: 1px solid #FF4C29;
-  border-radius: 100vw;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-2 #right .paypal .login input {
-  width: 30vw;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login button {
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 1rem;
-  border: 1px solid #FF4C29;
-  border-radius: 100vw;
-}
-
-#projects .wrapper .project.masta.show .project-modal .body .panel-3 .admin .login input {
-  width: 30vw;
-}
-
 #projects .wrapper .project.swift {
   background-image: url(images/swift/hero2.png);
   background-position: center;
@@ -892,136 +905,6 @@ textarea {
 
 #projects .wrapper .project.swift:hover::after {
   opacity: 0;
-}
-
-#projects .wrapper .project.swift .project-modal {
-  display: none;
-}
-
-#projects .wrapper .project.swift.show .project-modal {
-  cursor: auto;
-  position: absolute;
-  background-color: #0D1117;
-  inset: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-y: scroll;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 8000;
-  padding: 3rem 0;
-}
-
-#projects .wrapper .project.swift.show .project-modal h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#projects .wrapper .project.swift.show .project-modal .head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-
-#projects .wrapper .project.swift.show .project-modal .head .title {
-  font-size: 3rem;
-  font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#projects .wrapper .project.swift.show .project-modal .head p {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-#projects .wrapper .project.swift.show .project-modal .head p a {
-  font-size: 1.5rem;
-  color: #FF4C29;
-  line-height: 2px;
-  text-decoration: none;
-}
-
-#projects .wrapper .project.swift.show .project-modal .head p:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  padding: 3rem 0;
-  gap: 3rem;
-  text-align: center;
-  width: 100%;
-  position: relative;
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-2 .mobile .screens {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-  margin: 1rem;
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-2 .mobile .screens img {
-  height: 300px;
-  width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-2 .scrolling-container {
-  height: 300px;
-  overflow: hidden;
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-2 .scrolling-container img {
-  -webkit-animation: scroll infinite 15s;
-          animation: scroll infinite 15s;
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-3 img {
-  width: calc(min(500px, 100%));
-}
-
-#projects .wrapper .project.swift.show .project-modal .body .panel-3 ul {
-  font-size: 1.5rem;
-  list-style: disc;
-  text-align: start;
-  padding: 0 3rem;
 }
 
 .contact {
