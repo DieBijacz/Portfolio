@@ -10,6 +10,16 @@ const closeSwift = document.querySelector('#close-swift')
 const modalMasta = document.querySelector('#masta')
 const modalSwift = document.querySelector('#swift')
 
+// MODAL
+readMorebtn.addEventListener('click', () => {
+  readMoreModal.classList.remove('hide')
+  window.addEventListener('keydown', (e) => {
+    if (e.key == 'Escape') {
+      readMoreModal.classList.add('hide')
+    }
+  })
+})
+
 openMasta.addEventListener('click', () => {
   modalMasta.classList.remove('hide')
   window.addEventListener('keydown', (e) => {
@@ -18,6 +28,7 @@ openMasta.addEventListener('click', () => {
     }
   })
 })
+
 openSwift.addEventListener('click', () => {
   modalSwift.classList.remove('hide')
   window.addEventListener('keydown', (e) => {
@@ -27,13 +38,18 @@ openSwift.addEventListener('click', () => {
   })
 })
 
+closeModalBtn.addEventListener('click', () => {
+  readMoreModal.classList.add('hide')
+  window.removeEventListener('keydown')
+})
+
 closeMasta.addEventListener('click', () => {
   modalMasta.classList.add('hide')
-  closeModal()
+  window.removeEventListener('keydown')
 })
 closeSwift.addEventListener('click', () => {
   modalSwift.classList.add('hide')
-  closeModal()
+  window.removeEventListener('keydown')
 })
 
 // SMOOTH SCROLLING
@@ -47,25 +63,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// MODAL
-closeModalBtn.addEventListener('click', () => {
-  closeModal()
-})
-
-readMorebtn.addEventListener('click', () => {
-  readMoreModal.classList.add('show')
-  window.addEventListener('keydown', (e) => {
-    if (e.key == 'Escape') {
-      closeModal()
-    }
-  })
-})
-
-function closeModal() {
-  readMoreModal.classList.remove('show')
-  window.removeEventListener('keydown')
-}
-
+// CLIPBOARDS
 copyBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     console.log(e.target.value)

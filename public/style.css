@@ -280,103 +280,12 @@ textarea {
   margin: 0 2rem;
 }
 
-#about {
-  position: relative;
-}
-
 .about {
+  height: 100%;
   display: -ms-grid;
   display: grid;
   place-items: center;
-  height: 100%;
   text-align: center;
-}
-
-.about #read-more-modal {
-  cursor: auto;
-  position: absolute;
-  background-color: #0D1117;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-y: scroll;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 8000;
-  display: none;
-}
-
-.about #read-more-modal.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about #read-more-modal #head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.about #read-more-modal #head h1 {
-  font-size: 3rem;
-}
-
-.about #read-more-modal #body .me ul {
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-}
-
-.about #read-more-modal #body .me ul li {
-  width: calc(min(400px, 100%));
-  margin: 1rem;
-}
-
-.about #read-more-modal #body .me h1 {
-  color: #FF4C29;
-}
-
-.about #read-more-modal #body .focus a {
-  cursor: pointer;
-  height: 1rem;
-  color: #FF4C29;
-}
-
-.about #read-more-modal #body .focus a:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
-}
-
-.about #read-more-modal #body .focus img {
-  height: 2rem;
 }
 
 .about .box {
@@ -387,7 +296,7 @@ textarea {
   gap: 3rem;
 }
 
-.about .box .me {
+.about .box #About-me {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,13 +313,13 @@ textarea {
   width: 100%;
 }
 
-.about .box .me .buttons {
+.about .box #About-me .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.about .box .me .buttons a {
+.about .box #About-me .buttons a {
   display: block;
 }
 
@@ -443,6 +352,40 @@ textarea {
   border-radius: 100vw;
   color: #FF4C29;
   border: 2px solid #FF4C29;
+}
+
+#read-more-modal #body .focus a {
+  cursor: pointer;
+  height: 1rem;
+  color: #FF4C29;
+}
+
+#read-more-modal #body .focus a:hover {
+  text-decoration: underline;
+}
+
+#read-more-modal #body .me ul {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#read-more-modal #body .me ul li {
+  width: calc(min(400px, 100%));
+  margin: 1rem;
+}
+
+#read-more-modal #body .me h1 {
+  color: #FF4C29;
 }
 
 .snake-container {
@@ -492,6 +435,10 @@ textarea {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.snake-container .snake .settings input {
+  margin: 0;
 }
 
 .snake-container .snake #contribution-wrapper {
@@ -814,7 +761,7 @@ textarea {
           transform: scale(1.05);
 }
 
-.project-modal .body .panel {
+.project-modal .panel {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];

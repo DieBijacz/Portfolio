@@ -266,91 +266,18 @@ textarea {
   }
 }
 
-#about {
-  position: relative;
-}
-
 .about {
+  height: 100%;
   display: grid;
   place-items: center;
-  height: 100%;
   text-align: center;
-
-  #read-more-modal {
-    cursor: auto;
-    position: absolute;
-    background-color: $dark-color;
-    display: flex;
-    overflow-y: scroll;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 8000;
-    display: none;
-
-    &.show {
-      display: flex;
-    }
-
-    #head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      h1 {
-        font-size: 3rem;
-      }
-    }
-
-    #body {
-      .me {
-        ul {
-          text-align: center;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 1rem;
-
-          li {
-            width: calc(min(400px, 100%));
-            margin: 1rem;
-          }
-        }
-
-
-        h1 {
-          color: $accent-color;
-        }
-      }
-
-      .focus {
-        a {
-          cursor: pointer;
-          height: 1rem;
-          color: $accent-color;
-
-          &:hover {
-            transform: scale(2);
-          }
-        }
-
-        img {
-          height: 2rem;
-        }
-      }
-    }
-  }
 
   .box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
 
-    .me {
+    #About-me {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -392,6 +319,41 @@ textarea {
   }
 }
 
+#read-more-modal {
+  #body {
+    .focus {
+      a {
+        cursor: pointer;
+        height: 1rem;
+        color: $accent-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .me {
+      ul {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          width: calc(min(400px, 100%));
+          margin: 1rem;
+        }
+      }
+
+      h1 {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
 .snake-container {
   display: flex;
   justify-content: space-between;
@@ -414,6 +376,10 @@ textarea {
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+
+      input {
+        margin: 0;
+      }
     }
 
     #contribution-wrapper {
@@ -695,16 +661,14 @@ textarea {
     }
   }
 
-  .body {
-    .panel {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      padding: 3rem 0;
-      gap: 3rem;
-      text-align: center;
-      width: 100%;
-      position: relative;
-    }
+  .panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 3rem 0;
+    gap: 3rem;
+    text-align: center;
+    width: 100%;
+    position: relative;
   }
 }
 
