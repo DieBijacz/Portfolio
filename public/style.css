@@ -432,11 +432,11 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
 }
 
 .snake-container .snake h1 {
   font-size: 3rem;
-  margin: 1rem;
 }
 
 .snake-container .snake .settings {
@@ -957,15 +957,15 @@ textarea {
   .hero img {
     width: 80px;
   }
-  .contact .boxes .box form .bottom {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  #contact .boxes .box form .bottom {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
-  .contact .boxes .box form .bottom input {
-    margin-right: 0;
-    margin-top: 1rem;
+  #contact .boxes .box form .bottom input {
+    margin-right: 0 !important;
+    margin-top: 1rem !important;
   }
 }
 
