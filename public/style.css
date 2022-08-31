@@ -418,6 +418,7 @@ textarea {
 }
 
 .snake-container .snake {
+  margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
