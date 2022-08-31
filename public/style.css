@@ -19,6 +19,7 @@
   scroll-snap-align: start;
   height: 100vh;
   background-color: #D2D2D2;
+  overflow-y: scroll;
 }
 
 .scroll-container section:nth-child(2n) {
@@ -52,7 +53,7 @@ a {
 
 hr {
   border: 1px solid #2f353d;
-  margin: 1rem 0;
+  margin: 2rem 0;
   width: 100%;
 }
 
@@ -201,6 +202,7 @@ textarea {
 
 .hero img {
   width: 100px;
+  margin-bottom: 1rem;
 }
 
 .hero .name {
@@ -255,9 +257,6 @@ textarea {
 }
 
 .hero .bottom-line {
-  color: #0D1117;
-  font-size: 1rem;
-  font-weight: bold;
   border-top: 2px solid #0D1117;
   border-bottom: 2px solid #0D1117;
   display: -webkit-box;
@@ -276,7 +275,7 @@ textarea {
           animation: scroll-horizontal 50s linear infinite;
 }
 
-.hero .bottom-line .text p {
+.hero .bottom-line .text span {
   margin: 0 2rem;
 }
 
@@ -354,13 +353,13 @@ textarea {
   border: 2px solid #FF4C29;
 }
 
-#read-more-modal #body .focus a {
+#read-more-modal #body .start a {
   cursor: pointer;
   height: 1rem;
   color: #FF4C29;
 }
 
-#read-more-modal #body .focus a:hover {
+#read-more-modal #body .start a:hover {
   text-decoration: underline;
 }
 
@@ -380,7 +379,7 @@ textarea {
 }
 
 #read-more-modal #body .me ul li {
-  width: calc(min(400px, 100%));
+  width: calc(min(350px, 100%));
   margin: 1rem;
 }
 
@@ -524,8 +523,8 @@ textarea {
 .snake-container .bottom {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 5rem;
 }
 
@@ -554,30 +553,6 @@ textarea {
           animation-timing-function: ease;
 }
 
-#masta .body input {
-  width: calc(max(30vw, 200px));
-  margin: 0 1rem 0 0;
-}
-
-#masta .body .login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 1rem;
-}
-
-#masta .body .login button {
-  cursor: pointer;
-  font-size: 1.2rem;
-  border: none;
-}
-
 #masta .body .panel-1 .mobile .screens {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -599,7 +574,7 @@ textarea {
      object-fit: cover;
 }
 
-#masta .body .panel-2 .arrow {
+#masta .body .panel-2 #arrow {
   width: 20%;
   position: absolute;
   top: 25%;
@@ -619,16 +594,15 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
 }
 
 #masta .body .panel-2 #right #arrow-down {
-  width: 10%;
-  position: absolute;
-  top: 45%;
-  left: 75%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  width: 20%;
+  height: auto;
 }
 
 #masta .body .panel-2 #right .paypal {
@@ -672,8 +646,8 @@ textarea {
 }
 
 #swift .body .panel-2 .scrolling-container img {
-  -webkit-animation: scroll infinite 15s;
-          animation: scroll infinite 15s;
+  -webkit-animation: scroll infinite 10s;
+          animation: scroll infinite 10s;
 }
 
 #swift .body .panel-3 img {
@@ -685,6 +659,17 @@ textarea {
   list-style: disc;
   text-align: start;
   padding: 0 3rem;
+}
+
+#swift .body .panel-4 .login-panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+#swift .body .panel-4 .login-panel p {
+  font-size: 1.5rem;
 }
 
 .project-modal {
@@ -710,7 +695,6 @@ textarea {
           align-items: center;
   width: 100vw;
   height: 100vh;
-  padding: 3rem 0;
   z-index: 9;
 }
 
@@ -720,15 +704,6 @@ textarea {
 }
 
 .project-modal .head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 100%;
 }
 
@@ -738,35 +713,50 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.project-modal .head p {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-.project-modal .head p a {
+.project-modal .head .links li a {
+  display: inline-block;
   font-size: 1.5rem;
   color: #FF4C29;
   line-height: 2px;
   text-decoration: none;
 }
 
-.project-modal .head p:hover {
+.project-modal .head .links li a:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.project-modal .body .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-modal .body input {
+  width: calc(max(30vw, 250px));
+  margin: 0 1rem 0 0;
 }
 
 .project-modal .panel {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  padding: 3rem 0;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 3rem;
   text-align: center;
   width: 100%;
@@ -933,7 +923,8 @@ textarea {
 }
 
 @media (max-width: 960px) {
-  .arrow {
+  #arrow-down,
+  #arrow {
     display: none;
   }
 }

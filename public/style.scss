@@ -27,6 +27,7 @@ $green-00: #161B22;
     scroll-snap-align: start;
     height: 100vh;
     background-color: $grey-color;
+    overflow-y: scroll;
 
     &:nth-child(2n) {
       background-color: $dark-color;
@@ -61,7 +62,7 @@ a {
 
 hr {
   border: 1px solid $shadow-color;
-  margin: 1rem 0;
+  margin: 2rem 0;
   width: 100%;
 }
 
@@ -198,6 +199,7 @@ textarea {
 
   img {
     width: 100px;
+    margin-bottom: 1rem;
   }
 
   .name {
@@ -245,9 +247,6 @@ textarea {
   }
 
   .bottom-line {
-    color: $dark-color;
-    font-size: 1rem;
-    font-weight: bold;
     border-top: 2px solid $dark-color;
     border-bottom: 2px solid $dark-color;
     display: flex;
@@ -259,7 +258,7 @@ textarea {
       white-space: nowrap;
       animation: scroll-horizontal 50s linear infinite;
 
-      p {
+      span {
         margin: 0 2rem;
       }
     }
@@ -321,7 +320,7 @@ textarea {
 
 #read-more-modal {
   #body {
-    .focus {
+    .start {
       a {
         cursor: pointer;
         height: 1rem;
@@ -342,7 +341,7 @@ textarea {
         align-items: center;
 
         li {
-          width: calc(min(400px, 100%));
+          width: calc(min(350px, 100%));
           margin: 1rem;
         }
       }
@@ -457,7 +456,7 @@ textarea {
 
   .bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 5rem;
 
     h1 {
@@ -488,24 +487,6 @@ textarea {
 // PROJECTS
 #masta {
   .body {
-    input {
-      width: calc(max(30vw, 200px));
-      margin: 0 1rem 0 0;
-    }
-
-    .login {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 1rem;
-
-      button {
-        cursor: pointer;
-        font-size: 1.2rem;
-        border: none;
-      }
-    }
-
     .panel-1 {
       .mobile {
         .screens {
@@ -525,7 +506,7 @@ textarea {
     }
 
     .panel-2 {
-      .arrow {
+      #arrow {
         width: 20%;
         position: absolute;
         top: 25%;
@@ -537,14 +518,12 @@ textarea {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         height: 100%;
 
         #arrow-down {
-          width: 10%;
-          position: absolute;
-          top: 45%;
-          left: 75%;
-          transform: translate(-50%, 0);
+          width: 20%;
+          height: auto;
         }
 
         .paypal {
@@ -589,7 +568,7 @@ textarea {
         overflow: hidden;
 
         img {
-          animation: scroll infinite 15s;
+          animation: scroll infinite 10s;
         }
       }
     }
@@ -604,6 +583,17 @@ textarea {
         list-style: disc;
         text-align: start;
         padding: 0 3rem;
+      }
+    }
+
+    .panel-4 {
+      .login-panel {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+
+        p {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -623,7 +613,6 @@ textarea {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  padding: 3rem 0;
   z-index: 9;
 
   h1 {
@@ -632,39 +621,50 @@ textarea {
   }
 
   .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
 
     .title {
       font-size: 3rem;
       font-weight: bold;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    p {
-      transition: 200ms;
+    .links {
+      li {
+        a {
+          display: inline-block;
+          font-size: 1.5rem;
+          color: $accent-color;
+          line-height: 2px;
+          text-decoration: none;
 
-      a {
-        font-size: 1.5rem;
-        color: $accent-color;
-        line-height: 2px;
-        text-decoration: none;
-
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
       }
+    }
+  }
 
-      &:hover {
-        transform: scale(1.05);
-      }
+  .body {
+    .links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input {
+      width: calc(max(30vw, 250px));
+      margin: 0 1rem 0 0;
     }
   }
 
   .panel {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    padding: 3rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
     text-align: center;
     width: 100%;
@@ -811,7 +811,9 @@ textarea {
 }
 
 @media (max-width: 960px) {
-  .arrow {
+
+  #arrow-down,
+  #arrow {
     display: none;
   }
 }

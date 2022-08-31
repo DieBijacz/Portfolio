@@ -18,18 +18,14 @@
   <div id="masta" class="project-modal hide">
     <div class="container">
       <div class="head">
-        <div>
-          <div class="title">
-            Masta
-          </div>
-          <p>
-            <a href="https://mastashop.herokuapp.com/" target="_blank">www.masta.com</a>
-          </p>
-          <p>
-            <a href="https://github.com/DieBijacz/eCommerce-platform-MERN" target="_blank">github</a>
-          </p>
+        <div class="title">
+          <p>Masta</p>
+          <button class="btn btn-accent" id="close-masta">Close</button>
         </div>
-        <button class="btn btn-accent" id="close-masta">Close</button>
+        <ul class="links">
+          <li><a href="https://mastashop.herokuapp.com/" target="_blank">www.masta.com</a></li>
+          <li><a href="https://github.com/DieBijacz/eCommerce-platform-MERN" target="_blank">github</a></li>
+        </ul>
       </div>
       <hr>
       <div class="body">
@@ -60,7 +56,7 @@
           <div>
             <h1>Search for best products</h1>
             <img src="images/masta/e-commerce-main1.png" alt="main">
-            <div class="arrow">
+            <div id="arrow">
               <img src="images/masta/arrow-right.png" alt="arrow">
             </div>
           </div>
@@ -69,7 +65,9 @@
               <h1>Go to checkout</h1>
               <img src="images/masta/checkout1.png" alt="checkout1">
             </div>
-            <img id="arrow-down" src="images/masta/arrow-down.png" alt="arrow-down">
+            <div id="arrow-down">
+              <img src="images/masta/arrow-down.png" alt="arrow-down">
+            </div>
             <div>
               <h1>Login with PayPal</h1>
               <div class="paypal">
@@ -88,49 +86,62 @@
         <hr>
         <div class="panel-3 panel">
           <div class="admin">
-            <h1>Log in as Admin</h1>
-            <p>Log in as admin to fully unlock website potential</p>
-            <div class="login">
-              <input type="text" id="email" value="admin@example.com" />
-              <button class="btn-accent btn copy-btn" value="admin@example.com">Copy</button>
+            <div>
+              <h1>Log in as Admin</h1>
+              <p>Admin panels allow you to add/delete/update items in the store. Delete and promote to admin
+                other
+                registered users. Gives you a look at all orders.</p>
             </div>
-            <div class="login">
-              <input type="text" id="password" value="123" />
-              <button class="btn-accent btn copy-btn" value="123">Copy</button>
+            <div>
+              <div class="login">
+                <input type="text" id="email" value="admin@example.com" />
+                <button class="btn-accent btn copy-btn" value="admin@example.com">Copy</button>
+              </div>
+              <div class="login">
+                <input type="text" id="password" value="123" />
+                <button class="btn-accent btn copy-btn" value="123">Copy</button>
+              </div>
             </div>
           </div>
           <div>
             <h1>Admin Panel</h1>
             <img src="images/masta/e-commerce-admin1.png" alt="admin3">
-            <p>Admin panels allow you to add/delete/update items in the store. Delete and promote to admin
-              other
-              registered users. Gives you a look at all orders.</p>
           </div>
+        </div>
+        <hr>
+        <div class="links">
+          <a class="btn btn-white" href="https://mastashop.herokuapp.com/" target="_blank">www.masta.com</a>
+          <a class="btn btn-white" href="https://github.com/DieBijacz/eCommerce-platform-MERN"
+            target="_blank">github</a>
         </div>
       </div>
     </div>
   </div>
+  <!-- SWIFT -->
   <div id="swift" class="project-modal hide">
     <div class="container">
       <div class="head">
-        <div>
-          <div class="title">
+        <div class="title">
+          <p>
             Swiftqueue
-          </div>
-          <p>
-            <a href="https://swiftqueue-clone.herokuapp.com/" target="_blank">www.swift.com</a>
           </p>
-          <p>
-            <a href="https://github.com/DieBijacz/Sqiftqueue" target="_blank">github</a>
-          </p>
+          <button class="btn btn-accent" id="close-swift">Close</button>
         </div>
-        <button class="btn btn-accent" id="close-swift">Close</button>
+        <ul class="links">
+          <li><a href="https://swiftqueue-clone.herokuapp.com/" target="_blank">www.swift.com</a></li>
+          <li><a href="https://github.com/DieBijacz/Sqiftqueue" target="_blank">github</a></li>
+        </ul>
       </div>
       <hr>
       <div class="body">
         <div class="description">
-          Clone of swiftqueue.com. I have to use this website and sometimes I find it hard to use. so I
-          recreate it!
+          <p>Clone of swiftqueue.com.</p>
+          <p>
+            I have to use this website and sometimes I find it hard to use. so I
+            recreate it!
+          </p>
+          <p>Their official website has changed during my development. Few things I kept, and some I have changed. The
+            website is based on the current user location.</p>
         </div>
         <hr>
         <div class="panel-1 panel">
@@ -166,9 +177,36 @@
             </ul>
           </div>
         </div>
+        <hr>
+        <div class="panel-4 panel">
+          <div class="login-panel">
+            <div>
+              <p>My goal was to practice working with React, Redux, Map, Database.</p>
+              <p>I added some animation using Framer-Motion.</p>
+              <p>You can register new account or just login with:</p>
+            </div>
+            <div>
+              <div class="login">
+                <input type="text" id="email" value="masta@example.com" />
+                <button class="btn-accent btn copy-btn" value="masta@example.com">Copy</button>
+              </div>
+              <div class="login">
+                <input type="text" id="password" value="123" />
+                <button class="btn-accent btn copy-btn" value="123">Copy</button>
+              </div>
+            </div>
+          </div>
+          <img src="images/swift/map.png" alt="map">
+        </div>
+        <hr>
+        <div class="links">
+          <a class="btn btn-white" href="https://swiftqueue-clone.herokuapp.com/" target="_blank">www.swift.com</a>
+          <a class="btn btn-white" href="https://github.com/DieBijacz/Sqiftqueue" target="_blank">github</a>
+        </div>
       </div>
     </div>
   </div>
+  <!-- ABOUT -->
   <div class="project-modal hide" id="read-more-modal">
     <div class="container">
       <div class="head">
@@ -177,16 +215,15 @@
       </div>
       <hr>
       <div id="body">
-        <div class="focus">
+        <div class="start">
           My programming adventure started with a few weeks of learning python.
           Then I discovered web development which I got into.
           I worked systematically and broadened the scope of my skills.
           I can find learning materials and set goals for myself. in my spare time I was doing tasks on the
-          codewars
           <a href="https://www.codewars.com/users/DieBijacz" target="_blank">
             codewars
           </a>
-          website
+          website.
         </div>
         <hr>
         <div class="me">
@@ -236,24 +273,24 @@
         </div>
         <div class="bottom-line">
           <div class="text">
-            <p>SCROLL DOWN TO SEE PROJECTS</p>
-            <p>SOLUTION_ORIENTED</p>
-            <p>DESIGN</p>
-            <p>CREATIVE</p>
-            <p>GOOD EYE FOR DETAILS </p>
-            <p>I LOOK FOR ANSWERS</p>
-            <p>TEAM PLAYER</p>
-            <p>ORGANISED</p>
+            <p><span>///</span>SCROLL DOWN TO SEE PROJECTS</p>
+            <p><span>///</span>SOLUTION_ORIENTED</p>
+            <p><span>///</span>DESIGN</p>
+            <p><span>///</span>CREATIVE</p>
+            <p><span>///</span>GOOD EYE FOR DETAILS </p>
+            <p><span>///</span>I LOOK FOR ANSWERS</p>
+            <p><span>///</span>TEAM PLAYER</p>
+            <p><span>///</span>ORGANISED</p>
           </div>
           <div class="text text-2">
-            <p>SCROLL DOWN TO SEE PROJECTS</p>
-            <p>SOLUTION_ORIENTED</p>
-            <p>DESIGN</p>
-            <p>CREATIVE</p>
-            <p>GOOD EYE FOR DETAILS </p>
-            <p>I LOOK FOR ANSWERS</p>
-            <p>TEAM PLAYER</p>
-            <p>ORGANISED</p>
+            <p><span>///</span>SCROLL DOWN TO SEE PROJECTS</p>
+            <p><span>///</span>SOLUTION_ORIENTED</p>
+            <p><span>///</span>DESIGN</p>
+            <p><span>///</span>CREATIVE</p>
+            <p><span>///</span>GOOD EYE FOR DETAILS </p>
+            <p><span>///</span>I LOOK FOR ANSWERS</p>
+            <p><span>///</span>TEAM PLAYER</p>
+            <p><span>///</span>ORGANISED</p>
           </div>
         </div>
       </div>
@@ -280,10 +317,10 @@
               <h1>Skills and technologies:</h1>
               <div class="icons">
                 <p>React</p>
-                <p>HTML</p>
-                <p>CSS</p>
+                <p>Sass</p>
+                <p>Express</p>
                 <p>JS</p>
-                <p>Redux</p>
+                <p>CSS</p>
                 <p>Tailwind</p>
                 <p>Bootstrap</p>
                 <p>Git</p>
