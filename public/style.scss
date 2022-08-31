@@ -34,6 +34,10 @@ $green-00: #161B22;
       color: #D2D2D2;
     }
   }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {
@@ -319,6 +323,12 @@ textarea {
 }
 
 #read-more-modal {
+  .head-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   #body {
     .start {
       a {
@@ -743,41 +753,70 @@ textarea {
 }
 
 // CONTACT
-.contact {
-  display: grid;
-  place-items: center;
-  height: 100%;
-  text-align: center;
+#contact {
+  position: relative;
 
-  .boxes {
-    width: 100%;
+  .wrapper {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    text-align: center;
 
-    .box {
+    .boxes {
       width: 100%;
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      flex-direction: column;
 
-      h1 {
-        font-size: 3rem;
-      }
-
-      form {
-        width: calc(min(800px, 100%));
+      .box {
+        width: 100%;
         display: flex;
+        justify-content: start;
+        align-items: center;
         flex-direction: column;
 
-        .bottom {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+        h1 {
+          font-size: 3rem;
+        }
 
-          input {
-            width: 100%;
-            margin-right: 1rem;
-            margin-top: 0;
+        form {
+          width: calc(min(800px, 100%));
+          display: flex;
+          flex-direction: column;
+
+          .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+              width: 100%;
+              margin-right: 1rem;
+              margin-top: 0;
+            }
           }
+        }
+      }
+    }
+  }
+
+
+  .footer {
+    background-color: $dark-color;
+    color: $grey-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      text-align: start;
+
+      .name {
+        line-height: .9;
+
+        span {
+          color: $accent-color;
         }
       }
     }
