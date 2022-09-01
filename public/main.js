@@ -1,56 +1,40 @@
 import { fetchData } from "./fetchData.js"
-const readMorebtn = document.querySelector('#read-more-btn')
-const readMoreModal = document.querySelector('#read-more-modal')
-const closeModalBtn = document.querySelector('#close-modal-btn')
 const copyBtns = document.querySelectorAll('.copy-btn')
-const openMasta = document.querySelector('#masta-modal')
-const openSwift = document.querySelector('#swift-modal')
-const closeMasta = document.querySelector('#close-masta')
-const closeSwift = document.querySelector('#close-swift')
-const modalMasta = document.querySelector('#masta')
-const modalSwift = document.querySelector('#swift')
+const openModalBtns = document.querySelectorAll('.open-modal')
+const closeModalBtns = document.querySelectorAll('.close-modal')
 
 // MODAL
-readMorebtn.addEventListener('click', () => {
-  readMoreModal.classList.remove('hide')
-  window.addEventListener('keydown', (e) => {
-    if (e.key == 'Escape') {
-      readMoreModal.classList.add('hide')
-    }
+openModalBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    openModal(e.target.dataset.modal)
   })
 })
 
-openMasta.addEventListener('click', () => {
-  modalMasta.classList.remove('hide')
-  window.addEventListener('keydown', (e) => {
-    if (e.key == 'Escape') {
-      modalMasta.classList.add('hide')
-    }
+closeModalBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    closeModal(e.target.dataset.modal)
   })
 })
 
-openSwift.addEventListener('click', () => {
-  modalSwift.classList.remove('hide')
+function openModal(project) {
+  const projectModal = document.querySelector(`#${project}`)
+  projectModal.classList.remove('hide')
+  addEscFunctionality(projectModal)
+}
+
+function closeModal(project) {
+  const projectModal = document.querySelector(`#${project}`)
+  projectModal.classList.add('hide')
+  removeEscFunctionality(projectModal)
+}
+
+function addEscFunctionality(projectModal) {
   window.addEventListener('keydown', (e) => {
     if (e.key == 'Escape') {
-      modalSwift.classList.add('hide')
+      projectModal.classList.add('hide')
     }
   })
-})
-
-closeModalBtn.addEventListener('click', () => {
-  readMoreModal.classList.add('hide')
-  window.removeEventListener('keydown')
-})
-
-closeMasta.addEventListener('click', () => {
-  modalMasta.classList.add('hide')
-  window.removeEventListener('keydown')
-})
-closeSwift.addEventListener('click', () => {
-  modalSwift.classList.add('hide')
-  window.removeEventListener('keydown')
-})
+}
 
 // SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

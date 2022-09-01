@@ -439,6 +439,10 @@ textarea {
   font-size: 3rem;
 }
 
+.snake-container .snake a {
+  color: #FF4C29;
+}
+
 .snake-container .snake .settings {
   display: -webkit-box;
   display: -ms-flexbox;

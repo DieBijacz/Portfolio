@@ -15,12 +15,13 @@
 </head>
 
 <body>
+  <!-- MASTA MODAL-->
   <div id="masta" class="project-modal hide">
     <div class="container">
       <div class="head">
         <div class="title">
           <p>Masta</p>
-          <button class="btn btn-accent" id="close-masta">Close</button>
+          <button class="btn btn-accent close-modal" data-modal="masta">Close</button>
         </div>
         <ul class="links">
           <li><a href="https://mastashop.herokuapp.com/" target="_blank">www.masta.com</a></li>
@@ -117,7 +118,7 @@
       </div>
     </div>
   </div>
-  <!-- SWIFT -->
+  <!-- SWIFT MODAL-->
   <div id="swift" class="project-modal hide">
     <div class="container">
       <div class="head">
@@ -125,7 +126,7 @@
           <p>
             Swiftqueue
           </p>
-          <button class="btn btn-accent" id="close-swift">Close</button>
+          <button class="btn btn-accent close-modal" data-modal="swift">Close</button>
         </div>
         <ul class="links">
           <li><a href="https://swiftqueue-clone.herokuapp.com/" target="_blank">www.swift.com</a></li>
@@ -206,12 +207,12 @@
       </div>
     </div>
   </div>
-  <!-- ABOUT -->
+  <!-- ABOUT MODAL-->
   <div class="project-modal hide" id="read-more-modal">
     <div class="container">
       <div class="head-about">
         <h1>About</h1>
-        <button id="close-modal-btn" class="btn btn-accent">Close</button>
+        <button class="btn btn-accent close-modal" data-modal="read-more-modal">Close</button>
       </div>
       <hr>
       <div id="body">
@@ -309,7 +310,8 @@
               <div class="buttons">
                 <a id="resume" href="https://diebijacz.github.io/Resume---website/" class="btn btn-accent"
                   target="_blank">Resume</a>
-                <button id="read-more-btn" class="btn btn-white">Read More</button>
+                <button id="read-more-btn" class="btn btn-white open-modal" data-modal="read-more-modal">Read
+                  More</button>
               </div>
             </div>
             <div class="skills">
@@ -334,7 +336,7 @@
         <div class="snake-container">
           <div class="snake">
             <h1>Git-Snake</h1>
-            <p>This is my github. Try to eat my commits</p>
+            <p>This is my <a href="https://github.com/DieBijacz" target="_blank">github</a>. Try to eat my commits</p>
             <div class="settings">
               <form id="form">
                 <input id="find-user" type="text" placeholder="Github user name">
@@ -361,9 +363,9 @@
       <div class="container">
         <div class="wrapper">
           <!-- MASTA -->
-          <div class="project masta" id="masta-modal"></div>
+          <div class="project masta open-modal" id="masta-modal" data-modal="masta"></div>
           <!-- SWIFT -->
-          <div class="project swift" id="swift-modal"></div>
+          <div class="project swift open-modal" id="swift-modal" data-modal="swift"></div>
         </div>
       </div>
     </section>
