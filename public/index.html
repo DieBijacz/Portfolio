@@ -33,8 +33,9 @@
     </div>
   </div>
   <section id="hero" class="bg-dark">
+    <div id="circle"></div>
     <div class="container">
-      <div class="wrapper">
+      <div class="wrapper flex-column">
         <div class="menu" id="menu-bottom">
           <a href="#snake">PROJECTS</a>
           <a href="#about">ABOUT</a>
@@ -50,13 +51,37 @@
       </div>
     </div>
   </section>
+  <section id="about" class="bg-dark grid-place-center">
+    <div class="container grid-place-center">
+      <div class="grid-auto text-center">
+        <div id="About-me" class="d-flex flex-column">
+          <h1>About me</h1>
+          <p>I am a person who just loves to learn new things.
+            I adapt quickly to the new environment and I am good at solving problems.
+          </p>
+          <div class="buttons d-flex-center">
+            <a id="resume" href="https://diebijacz.github.io/Resume---website/" class="btn btn-accent"
+              target="_blank">Resume</a>
+            <button id="read-more-btn" class="btn btn-white open-modal" data-modal="read-more-modal">Read
+              More</button>
+          </div>
+        </div>
+        <div class="skills">
+          <h1>Skills and technologies:</h1>
+          <div class="icons">
+            TU MAJA BYC IKONKI
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="projects">
     <div class="container">
-      <div class="snake-container">
-        <div class="snake">
+      <div class="snake-container grid-place-center">
+        <div class="snake d-flex-center flex-column">
           <h1 class="text-title">Git-Snake</h1>
           <p>This is my <a href="https://github.com/DieBijacz" target="_blank">github</a>. Try to eat my commits</p>
-          <div class="settings">
+          <div class="settings d-flex-center">
             <form id="form">
               <input id="find-user" type="text" placeholder="Github user name">
               <button type="submit" id="find-user-btn" class="btn btn-accent hide">Find</button>
@@ -118,78 +143,44 @@
       </div>
     </div>
   </section>
-  <section id="about" class="bg-dark">
-    <div class="container">
-      <div class="about grid-place-center">
-        <div class="box grid-auto">
-          <div id="About-me" class="d-flex">
-            <h1>About me</h1>
-            <p>I am a person who just loves to learn new things.
-              I adapt quickly to the new environment and I am good at solving problems.
-            </p>
-            <p>
-              I don't let go until I find a solution.
-            </p>
-            <div class="buttons">
-              <a id="resume" href="https://diebijacz.github.io/Resume---website/" class="btn btn-accent"
-                target="_blank">Resume</a>
-              <button id="read-more-btn" class="btn btn-white open-modal" data-modal="read-more-modal">Read
-                More</button>
-            </div>
-          </div>
-          <div class="skills">
-            <h1>Skills and technologies:</h1>
-            <div class="icons">
-              <p>React</p>
-              <p>Sass</p>
-              <p>Express</p>
-              <p>JS</p>
-              <p>CSS</p>
-              <p>Tailwind</p>
-              <p>Bootstrap</p>
-              <p>Git</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="container wrapper">
-      <div class="boxes">
-        <div class="box">
+  <section id="contact" class="grid-place-center">
+    <div class="container grid-auto">
+      <div class="box d-flex-center">
+        <div class="flex-column text-center">
           <h1>Thanks!</h1>
           <p>Thank you for visiting my portfolio. Hope you like it.</p>
           <p>Feel free to send me a text.</p>
           <p>For the Horde!</p>
         </div>
-        <div class="box">
-          <form action="https://formsubmit.co/mastanilewicz@gmail.com" method="POST">
-            <textarea name="message" rows="5" placeholder="Send me a message" required></textarea>
-            <div class="bottom">
-              <input name="name" type="text" placeholder="name" required>
-              <input type="text" name="_honey" style="display:none">
-              <input name="email" type="email" placeholder="email" required>
-              <button id="send" type="submit" class="btn btn-accent">Send</button>
-            </div>
-          </form>
-        </div>
       </div>
-      <div class="footer">
-        <div class="container">
-          <div class="name">
-            <h1><span>MA</span>TEUSZ</h1>
-            <h1><span>STA</span>NILEWICZ</h1>
+      <div class="box d-flex-center">
+        <form action="https://formsubmit.co/mastanilewicz@gmail.com" method="POST">
+          <textarea name="message" rows="5" placeholder="Send me a message" required></textarea>
+          <div class="bottom">
+            <input name="name" type="text" placeholder="name" required>
+            <input type="text" name="_honey" style="display:none">
+            <input name="email" type="email" placeholder="email" required>
+            <button id="send" type="submit" class="btn btn-accent">Send</button>
           </div>
-          <div class="contact">
-            <h1>Contact:</h1>
-            <p>+447732817630</p>
-            <p>mastanilewicz@gmail.com</p>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
+  <div id="footer" class="bg-dark">
+    <div class="container">
+      <div class="grid-auto">
+        <div class="logo margin-auto">
+          <h1><span>MA</span>TEUSZ</h1>
+          <h1><span>STA</span>NILEWICZ</h1>
+        </div>
+        <div class="contact margin-auto">
+          <h2>Contact:</h2>
+          <p>+447732817630</p>
+          <p>mastanilewicz@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

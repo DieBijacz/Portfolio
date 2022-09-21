@@ -5,7 +5,7 @@ export function animations() {
   function animateHero() {
     gsap.from(".logo", {
       scrollTrigger: {
-        trigger: "#projects",
+        trigger: "#about",
         start: "top bottom",
         end: "top center",
         scrub: 1
@@ -16,7 +16,7 @@ export function animations() {
 
     gsap.to('.front-end-developer', {
       scrollTrigger: {
-        trigger: "#projects",
+        trigger: "#about",
         start: "top bottom",
         end: "top center",
         scrub: .1
@@ -29,7 +29,7 @@ export function animations() {
 
     gsap.to('#menu-bottom', {
       scrollTrigger: {
-        trigger: "#projects",
+        trigger: "#about",
         start: "top bottom",
         end: "top center",
         scrub: .1
@@ -43,18 +43,21 @@ export function animations() {
 
     gsap.to('#navbar', {
       scrollTrigger: {
-        trigger: "#projects",
+        trigger: "#about",
         start: "top 20%",
         end: "top top",
         scrub: .5
       },
       boxShadow: '0 2px 20px black'
     })
+  }
 
+  function loadHeroAnimation() {
     // load hero
     gsap.from('.menu', { opacity: 0, scale: 0, x: '-100%', duration: .7 })
     gsap.from('.logo', { opacity: 0, scale: 0, x: '-100%', duration: .7 })
     gsap.from('.front-end-developer', { scale: 10, opacity: 0, duration: .5, delay: 1 })
+    gsap.from('#circle', { opacity: 0, duration: 5, delay: 1 })
   }
 
   function animateMoreProjects() {
@@ -75,4 +78,5 @@ export function animations() {
 
   animateMoreProjects()
   animateHero()
+  loadHeroAnimation()
 }

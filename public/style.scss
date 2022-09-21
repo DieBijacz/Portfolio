@@ -121,7 +121,7 @@ hr {
 
 textarea,
 input {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 100vw;
@@ -132,6 +132,7 @@ input {
 
 textarea {
   border-radius: 30px;
+  width: 100%;
 }
 
 .text-title {
@@ -217,6 +218,16 @@ textarea {
   }
 }
 
+.logo {
+  line-height: .9;
+  color: $grey-color;
+  padding: 1rem 0;
+
+  span {
+    color: $accent-color;
+  }
+}
+
 #navbar {
   position: sticky;
   top: 0;
@@ -228,29 +239,29 @@ textarea {
     justify-content: space-between;
     align-items: center;
 
-
-
-    .logo {
-      line-height: .9;
-      color: $grey-color;
-      padding: 1rem 0;
-
-      span {
-        color: $accent-color;
-      }
-    }
-
     p {
       transform: translateX(50%);
     }
   }
 }
 
+
 #hero {
+  position: relative;
+
+  #circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 5px dashed $accent-color;
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    animation: spin 50s infinite;
+  }
+
   .wrapper {
-    display: flex;
     justify-content: flex-end;
-    flex-direction: column;
     min-height: 90vh;
 
     .stack {
@@ -259,7 +270,7 @@ textarea {
       margin: 3rem;
     }
 
-    .menu {
+    #menu-bottom {
       flex-direction: column;
       width: calc(min(400px, 90%));
       gap: 0;
@@ -282,19 +293,14 @@ textarea {
 }
 
 #projects {
+  min-height: 200vh;
+
   .snake-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
+    height: 100vh;
     padding: 5rem 0;
 
     .snake {
       margin: auto 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 1rem;
 
       a {
@@ -302,9 +308,6 @@ textarea {
       }
 
       .settings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
 
         input {
@@ -447,115 +450,14 @@ textarea {
   }
 }
 
-.about {
-  text-align: center;
-
-  .box {
-    #About-me {
-      flex-direction: column;
-
-      .buttons {
-        display: flex;
-
-        a {
-          display: block;
-        }
-      }
-    }
-
-    .skills {
-      width: 100%;
-
-      .icons {
-        margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-
-        p {
-          padding: 1rem 2rem;
-          background-color: $dark-color;
-          margin: 1rem;
-          width: calc(max(150px, 10vw));
-          text-align: center;
-          font-weight: bold;
-          border-radius: 100vw;
-          color: $accent-color;
-          border: 2px solid $accent-color;
-        }
-      }
-    }
-  }
-}
+#about {}
 
 // CONTACT
-#contact {
-  position: relative;
+#contact {}
 
-  .wrapper {
-    display: grid;
-    place-items: center;
-    height: 100%;
-    text-align: center;
-
-    .boxes {
-      width: 100%;
-
-      .box {
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        flex-direction: column;
-
-        h1 {
-          font-size: 3rem;
-        }
-
-        form {
-          width: calc(min(800px, 100%));
-          display: flex;
-          flex-direction: column;
-
-          .bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            input {
-              width: 100%;
-              margin-right: 1rem;
-              margin-top: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .footer {
-    background-color: $dark-color;
-    color: $grey-color;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      place-items: center;
-      text-align: start;
-
-      .name {
-        line-height: .9;
-
-        span {
-          color: $accent-color;
-        }
-      }
-    }
+#footer {
+  .margin-auto {
+    margin: 0 auto;
   }
 }
 
@@ -679,5 +581,15 @@ textarea {
 
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
