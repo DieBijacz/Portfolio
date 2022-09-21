@@ -54,11 +54,33 @@
   <section id="about" class="bg-dark grid-place-center">
     <div class="container grid-place-center">
       <div class="grid-auto text-center">
-        <div id="About-me" class="d-flex flex-column">
+        <div id="About-me" class="d-flex-center flex-column">
           <h1>About me</h1>
           <p>I am a person who just loves to learn new things.
             I adapt quickly to the new environment and I am good at solving problems.
           </p>
+          <table class="text-start">
+            <tr>
+              <th>Name:</th>
+              <td>Mateusz Stanilewicz</td>
+            </tr>
+            <tr>
+              <th>Date of Birth:</th>
+              <td>24.01.1993</td>
+            </tr>
+            <tr>
+              <th>Nationality:</th>
+              <td>Polish</td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td>mastanilewicz@gmail.com</td>
+            </tr>
+            <tr>
+              <th>Contact number:</th>
+              <td>07732817630</td>
+            </tr>
+          </table>
           <div class="buttons d-flex-center">
             <a id="resume" href="https://diebijacz.github.io/Resume---website/" class="btn btn-accent"
               target="_blank">Resume</a>
@@ -70,6 +92,13 @@
           <h1>Skills and technologies:</h1>
           <div class="icons">
             TU MAJA BYC IKONKI
+            <p>JAVASCRIPT</p>
+            <p>NODEJS</p>
+            <p>REACT</p>
+            <p>SASS</p>
+            <p>GIT</p>
+            <p>PYTHON</p>
+            <p>EXPRESS</p>
           </div>
         </div>
       </div>
@@ -111,6 +140,13 @@
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, harum amet. Earum ipsa tempora,
                   facilis reiciendis ratione fugit adipisci excepturi!
                 </div>
+                <div class="d-flex tools">
+                  <div>REACT</div>
+                  <div>REDUX</div>
+                  <div>EXPRESS</div>
+                  <div>MONGODB</div>
+                  <div>BOOTSTRAP</div>
+                </div>
                 <div class="buttons">
                   <button class="btn btn-dark">Live</button>
                   <button class="btn btn-dark">Code</button>
@@ -128,6 +164,12 @@
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, harum amet. Earum ipsa tempora,
                   facilis reiciendis ratione fugit adipisci excepturi!
                 </div>
+                <div class="d-flex tools">
+                  <div>REACT</div>
+                  <div>EXPRESS</div>
+                  <div>MONGODB</div>
+                  <div>LEAFLET</div>
+                </div>
                 <div class="buttons">
                   <button class="btn btn-dark">Live</button>
                   <button class="btn btn-dark">Code</button>
@@ -144,26 +186,22 @@
     </div>
   </section>
   <section id="contact" class="grid-place-center">
-    <div class="container grid-auto">
-      <div class="box d-flex-center">
-        <div class="flex-column text-center">
-          <h1>Thanks!</h1>
-          <p>Thank you for visiting my portfolio. Hope you like it.</p>
-          <p>Feel free to send me a text.</p>
-          <p>For the Horde!</p>
+    <div class="container grid-auto grid-place-center">
+      <div class="flex-column text-center">
+        <h1 class="text-title">Thanks!</h1>
+        <p>Thank you for visiting my portfolio. Hope you like it.</p>
+        <p>Feel free to send me a text.</p>
+        <p>For the Horde!</p>
+      </div>
+      <form action="https://formsubmit.co/mastanilewicz@gmail.com" method="POST">
+        <textarea name="message" rows="5" placeholder="Send me a message" required></textarea>
+        <div class="bottom">
+          <input name="name" type="text" placeholder="name" required>
+          <input type="text" name="_honey" style="display:none">
+          <input name="email" type="email" placeholder="email" required>
+          <button id="send" type="submit" class="btn btn-accent">Send</button>
         </div>
-      </div>
-      <div class="box d-flex-center">
-        <form action="https://formsubmit.co/mastanilewicz@gmail.com" method="POST">
-          <textarea name="message" rows="5" placeholder="Send me a message" required></textarea>
-          <div class="bottom">
-            <input name="name" type="text" placeholder="name" required>
-            <input type="text" name="_honey" style="display:none">
-            <input name="email" type="email" placeholder="email" required>
-            <button id="send" type="submit" class="btn btn-accent">Send</button>
-          </div>
-        </form>
-      </div>
+      </form>
     </div>
   </section>
   <div id="footer" class="bg-dark">

@@ -70,7 +70,7 @@ export function animations() {
         // scrub: 1,
       },
     })
-    dotTL.to('#dot', { width: '100%', height: '5px', duration: .5 })
+    dotTL.to('#dot', { width: '100%', height: '2px', duration: .5 })
     dotTL.to('#dot', { height: '100vh', duration: .5 })
     dotTL.from('.project-card', { opacity: 0, x: 1000, delay: .5, duration: .5 })
     dotTL.from('.project-image-wrapper', { opacity: 0, duration: .5 })

@@ -145,6 +145,10 @@ textarea {
   width: 100%;
 }
 
+.text-start {
+  text-align: left;
+}
+
 .wrong {
   animation: shake 0.5s;
 }
@@ -416,6 +420,12 @@ textarea {
         .project-description {
           padding: 1rem 2rem;
 
+          .tools {
+            gap: 3rem;
+            margin: 1rem 0;
+            font-weight: bold;
+          }
+
           .buttons {
             transition: .3s;
             opacity: 0;
@@ -426,7 +436,11 @@ textarea {
           position: relative;
           background-position: center;
           background-size: cover;
-          height: 300px;
+          height: 100%;
+
+          img {
+            height: 100%;
+          }
 
           &::after {
             content: '';
@@ -450,49 +464,19 @@ textarea {
   }
 }
 
-#about {}
+#about {
+  table {
+    margin: 1rem;
 
-// CONTACT
-#contact {}
+    td {
+      padding-left: 3rem;
+    }
+  }
+}
 
 #footer {
   .margin-auto {
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 910px) {
-
-  #contact {
-    .boxes {
-      .box {
-        form {
-          .bottom {
-            flex-direction: column !important;
-
-            input {
-              margin-right: 0 !important;
-              margin-top: 1rem !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 960px) {
-  #navbar {
-    .container {
-      .menu {
-        display: none;
-      }
-    }
-  }
-
-  #arrow-down,
-  #arrow {
-    display: none;
   }
 }
 

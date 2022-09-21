@@ -159,6 +159,10 @@ textarea {
   width: 100%;
 }
 
+.text-start {
+  text-align: left;
+}
+
 .wrong {
   -webkit-animation: shake 0.5s;
           animation: shake 0.5s;
@@ -463,6 +467,12 @@ textarea {
   padding: 1rem 2rem;
 }
 
+#projects #more-projects-wrapper #dot .project-card .project-description .tools {
+  gap: 3rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
 #projects #more-projects-wrapper #dot .project-card .project-description .buttons {
   -webkit-transition: .3s;
   transition: .3s;
@@ -473,7 +483,11 @@ textarea {
   position: relative;
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 100%;
+}
+
+#projects #more-projects-wrapper #dot .project-card .project-image-wrapper img {
+  height: 100%;
 }
 
 #projects #more-projects-wrapper #dot .project-card .project-image-wrapper::after {
@@ -493,31 +507,16 @@ textarea {
   opacity: 1;
 }
 
+#about table {
+  margin: 1rem;
+}
+
+#about table td {
+  padding-left: 3rem;
+}
+
 #footer .margin-auto {
   margin: 0 auto;
-}
-
-@media (max-width: 910px) {
-  #contact .boxes .box form .bottom {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-  }
-  #contact .boxes .box form .bottom input {
-    margin-right: 0 !important;
-    margin-top: 1rem !important;
-  }
-}
-
-@media (max-width: 960px) {
-  #navbar .container .menu {
-    display: none;
-  }
-  #arrow-down,
-  #arrow {
-    display: none;
-  }
 }
 
 @-webkit-keyframes spin {
