@@ -10,73 +10,37 @@ export function animations() {
         end: "top center",
         scrub: 1
       },
-      fontSize: '4.5vw',
-      y: '70%'
+      fontSize: '5vw',
+      y: '50%',
+      x: '20%'
     })
 
-    gsap.to('.front-end-developer', {
+    gsap.from(".front-end-developer", {
       scrollTrigger: {
         trigger: "#about",
         start: "top bottom",
         end: "top center",
-        scrub: .1
+        scrub: 1
       },
-      display: 'none',
-      opacity: 0,
-      scale: 0,
-      x: '-100%',
+      opacity: 1,
     })
-
-    gsap.to('#menu-bottom', {
+    gsap.from(".menu", {
       scrollTrigger: {
         trigger: "#about",
         start: "top bottom",
         end: "top center",
-        scrub: .1
+        scrub: 1
       },
-      display: 'none',
-      opacity: 0,
-      scale: 0,
-      x: '-100%',
-      y: '100%'
-    })
-
-    gsap.to('#navbar', {
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 20%",
-        end: "top top",
-        scrub: .5
-      },
-      boxShadow: '0 2px 20px black'
+      opacity: 1,
     })
   }
 
   function loadHeroAnimation() {
     // load hero
-    gsap.from('.menu', { opacity: 0, scale: 0, x: '-100%', duration: .7 })
-    gsap.from('.logo', { opacity: 0, scale: 0, x: '-100%', duration: .7 })
-    gsap.from('.front-end-developer', { scale: 10, opacity: 0, duration: .5, delay: 1 })
-    gsap.from('#circle', { opacity: 0, duration: 5, delay: 1 })
+    gsap.from('.logo', { opacity: 0, y: '300%', scale: 0, duration: 1, ease: "elastic.out(.3, 0.2)" })
+    gsap.from('.front-end-developer', { scale: 10, opacity: 0, duration: .7, delay: .3, ease: "elastic.out(.3, 0.4)" })
   }
 
-  function animateMoreProjects() {
-    let dotTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#more-projects-wrapper',
-        start: 'top center',
-        markers: true,
-        // end: '80% bottom',
-        // scrub: 1,
-      },
-    })
-    dotTL.to('#dot', { width: '100%', height: '2px', duration: .5 })
-    dotTL.to('#dot', { height: '100vh', duration: .5 })
-    dotTL.from('.project-card', { opacity: 0, x: 1000, delay: .5, duration: .5 })
-    dotTL.from('.project-image-wrapper', { opacity: 0, duration: .5 })
-  }
-
-  animateMoreProjects()
   animateHero()
   loadHeroAnimation()
 }

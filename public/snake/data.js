@@ -1,11 +1,12 @@
-import { getFood } from "./snake/food.js"
+import { getFood } from "./food.js"
 const grid = document.querySelector('#game-board')
 const userInput = document.querySelector('#find-user')
 
 export async function getData(USER) {
   let arr = []
   let data = []
-  await fetch(`/${USER}`)
+  // await fetch(`/${USER}`)
+  await fetch(`http://localhost:5000/${USER}`)
     .then(response => response.json())
     .then(data => arr = [...data])
     .catch(error => {

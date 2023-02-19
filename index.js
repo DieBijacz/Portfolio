@@ -5,8 +5,9 @@ const cheerio = require('cheerio')
 require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
-
 const app = express()
+
+app.use(cors())
 app.listen(PORT, () => {
   console.log(`Starting server at ${PORT}`)
 })
@@ -15,11 +16,15 @@ app.use(express.static('public'))
 app.get('/:user', (req, res, next) => {
   const { user } = req.params
 
+  console.log('here')
   const values = []
 
   request.get(`https://github.com/${user}`, (error, response, body) => {
 
-    if (error) return next(error)
+    if (error) {
+      console.log(error)
+      return next(error)
+    }
 
     if (response.statusCode === 404) return next({
       status: 404,
@@ -30,7 +35,7 @@ app.get('/:user', (req, res, next) => {
       const $ = cheerio.load(body);
       $('rect').get().reduce((data, rect) => {
         const value = (() => {
-          const count = $(rect).data('count');
+          const count = $(rect).data('level');
           // const date = $(rect).data('date')
           // return { count, date };
           return count

@@ -1,8 +1,18 @@
-import { fetchData } from "./fetchData.js"
+import { fetchDataForSnake } from "./snake/fetchData.js"
 import { animations } from "./gsap.js"
 import { modals } from "./modals.js";
 
 const copyBtns = document.querySelectorAll('.copy-btn')
+const blob = document.querySelector('#blob')
+
+document.onpointermove = e => {
+  const { clientX, clientY } = e
+  blob.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`
+  }, { duration: 1000, fill: 'forwards' })
+}
+
 
 // CLIPBOARDS
 copyBtns.forEach(btn => {
@@ -24,11 +34,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // DATA FOR SNAKE
-fetchData()
+// fetchDataForSnake()
 
 // GSAP
 animations()
 
 // MODALS functionality
-modals()
+// modals()
 

@@ -5,7 +5,7 @@ const findUserBtn = document.querySelector('#find-user-btn')
 const form = document.querySelector('#form')
 const loader = document.querySelector('.loader')
 
-export function fetchData() {
+export function fetchDataForSnake() {
   async function fetchHandler(user = 'dieBijacz') {
     grid.innerHTML = ''
     loader.classList.add('show')

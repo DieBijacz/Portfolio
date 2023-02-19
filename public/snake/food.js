@@ -1,4 +1,4 @@
-import { addRectOnGrid } from '../data.js'
+import { addRectOnGrid } from './data.js'
 import { snakeHead, onSameCoords, growSnake } from './snake.js'
 
 let foodLeft = []
